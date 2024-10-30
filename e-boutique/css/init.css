@@ -1,0 +1,18 @@
+/*ce fichier doit etre importé dans les autres fichiers css (@import ___ ) tous car ils contient toutes les couleurs et la base*/
+:root{
+    --vert-clair: #1C6D67; /*Ceci est plus pour les hover et les click (effets)*/
+    --vert-sombre: #014842; /*Ceci est le vert "standard"*/
+    --blanc-clair: whitesmoke; 
+    --gris: #A5A5A5;
+    --noir: #131416; /*Ceci est le noir*/
+}
+
+@font-face {
+    font-family: kronaOne;
+    src: url("../font/KronaOne-Regular.ttf");
+}
+*{
+    font-family: kronaOne;
+    margin: 0;
+    padding: 0;
+}

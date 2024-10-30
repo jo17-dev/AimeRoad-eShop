@@ -1,0 +1,127 @@
+@import url("./init.css");
+
+/*-------------- barre de navigation */
+.nav-bar{
+    background-color: var(--vert-sombre);
+    height: 40px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--vert-clair);
+    position: fixed;
+}
+
+.nav-bar .logo{
+    float: left;
+}
+
+/* lients de  nav */
+
+.nav-bar .links{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+    width: 350px;
+    font-size:small;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav-bar .links li :hover{
+    border-bottom: 2px solid white;
+}
+.nav-bar .links li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding-top: 10px;
+
+}
+
+/* partie comptes et panier */
+.user-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    float: right;
+    list-style-type: none;
+    margin-right: 20px;
+}
+.user-panel li{
+    padding-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.user-panel li a{
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+.user-panel li a img{
+    width: 20px;
+    height: auto;
+}
+
+/* textes sur la 1ere section */
+
+.light-green-text{
+    color: var(--vert-clair);
+
+}
+
+.white-text{
+    color: var(--blanc-clair);
+}
+
+.grey-text{
+    color: var(--gris);
+}
+
+header{
+    background-color: var(--vert-sombre);
+    min-height: 80vh;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+header .left-part{
+    width: 50%;
+}
+header .left-part h1{
+    font-size: 3.9rem;
+    padding-left: 15%;
+}
+header .left-part h1 span{
+    display: block;
+}
+
+/* right part of the site */
+.right-part{
+    width: 50%;
+}
+.circle{
+    background-color: var(--vert-clair);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 48% 48%;
+}
+
+.circle-1{
+    width: 80%;
+    height: 40%;
+    margin-top: 5%;
+}
+.circle-2{
+    width: 70%;
+    height: 35%;
+    margin-top: -2%;
+    transform: translateX(-5%);
+}
+.circle-3{
+    width: 40%;
+    height: 25%;
+    margin-top: -2%;
+    transform: translateX(-20%);
+}
