@@ -1,71 +1,7 @@
-@import url("./init.css");
-
-/*-------------- barre de navigation */
-.nav-bar{
-    background-color: var(--vert-sombre);
-    height: 40px;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--vert-clair);
-    position: fixed;
-    z-index: 1;
-}
-
-.nav-bar .logo{
-    float: left;
-}
-
-/* lients de  nav */
-
-.nav-bar .links{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: space-around;
-    width: 350px;
-    font-size:small;
-    margin-left: auto;
-    margin-right: auto;
-}
-.nav-bar .links li :hover{
-    border-bottom: 2px solid white;
-}
-.nav-bar .links li a{
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding-top: 10px;
-
-}
-
-/* partie comptes et panier */
-.user-panel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    float: right;
-    list-style-type: none;
-    margin-right: 20px;
-}
-.user-panel li{
-    padding-top: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.user-panel li a{
-    display: block;
-    height: 100%;
-    margin: auto;
-}
-.user-panel li a img{
-    width: 20px;
-    height: auto;
-}
-
 /* textes sur la 1ere section */
+@import url("./init.css");
+@import url('./header.css');
+@import url('./footer.css');
 
 .light-green-text{
     color: var(--vert-clair);
@@ -204,52 +140,4 @@ header .left-part .go-to-shop-btn{
     font-size: smaller;
     font-weight: 100;
     padding: 20px;
-}
-
-
-/* footer */
-footer{
-    background-color: var(--noir);
-    color: var(--blanc-clair);
-    padding-top: 20px;
-}
-
-
-footer > div{
-    font-size: small;
-    padding: 10px;
-}
-
-/* partie du copyrigth */
-footer > div:nth-child(2) {
-    background-color: var(--vert-sombre);
-    color: var(--blanc-clair);
-}
-
-/* partie des infos */
-footer > div:nth-child(1){
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    */
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    margin: auto;
-    width: 80%;
-    max-width: 800px;
-}
-
-footer > div:nth-child(1) > div{
-    /* border: 1px solid blue; */
-    width: 210px;
-    margin-right: auto;
-    margin-top: 20px;
-}
-footer > div:nth-child(1) > div > img {
-    height: 40px;
-}
-
-footer > div:nth-child(1) > div > h4{
-    margin-bottom: 10px;
 }

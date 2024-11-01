@@ -1,0 +1,48 @@
+/* ceci est le code pour le footer des pages */
+/* footer */
+footer{
+    margin-top: 20px;
+    background-color: var(--noir);
+    color: var(--blanc-clair);
+    padding-top: 20px;
+}
+
+
+footer > div{
+    font-size: small;
+    padding: 10px;
+}
+
+/* partie du copyrigth */
+footer > div:nth-child(2) {
+    background-color: var(--vert-sombre);
+    color: var(--blanc-clair);
+}
+
+/* partie des infos */
+footer > div:nth-child(1){
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    */
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+footer > div:nth-child(1) > div{
+    /* border: 1px solid blue; */
+    width: 210px;
+    margin-right: auto;
+    margin-top: 20px;
+}
+footer > div:nth-child(1) > div > img {
+    height: 40px;
+}
+
+footer > div:nth-child(1) > div > h4{
+    margin-bottom: 10px;
+}
