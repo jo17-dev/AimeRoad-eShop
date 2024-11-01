@@ -5,6 +5,7 @@
     --blanc-clair: whitesmoke; 
     --gris: #A5A5A5;
     --noir: #131416; /*Ceci est le noir*/
+    --rouge: rgb(189, 48, 48);
 }
 
 @font-face {

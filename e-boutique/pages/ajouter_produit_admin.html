@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/ajouter_produit_admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <img src="../img/logo-320x60.png" class="logo" alt="Aimeroad">
+        <ul class="links">
+            <li><a href="">Accueil</a></li>
+            <li><a href="">À propos</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <ul class="user-panel">
+            <li>
+                <a href="./pages/connexion.php" title="click to view your cart"><img src="../img/panier-320x320.png" alt="login"></a>
+            </li>
+            <li>
+                <a href="./pages/connexion.php" title="click to login or connect"><img src="../img/compte-320x320.png" alt="login"></a>
+            </li>
+        </ul>
+    </nav>
+    <div id="container">
+        <h1>Formulaire de création de produit</h1>
+        <form action="" method="post">
+            <div>
+                <label for="nom">Nom:</label>
+                <input type="text" name="nom" id="nom">
+            </div>
+            <div>
+                <label for="prix">Prix unitaire (en USD): </label>
+                <input type="number" name="prix" id="prix">
+            </div>            
+            <div>
+                <label for="quantitee">Quantitée </label>
+                <input type="number" name="quantitee" id="quantitee">
+            </div>
+            <div>
+                <label for="photo">Importez une photo du produit <span class="red-text"><small>(*jpg ou png)</small></span> </label>
+                <input type="file" name="photo" id="photo">
+            </div>
+            <div>
+                <label for="categorie">Categorie</label>
+                <select name="categorie" id="categorie">
+                    <option value="chaussures">Chaussures</option>
+                    <option value="bijoux">Bijoux</option>
+                    <option value="manteaux">Manteaux</option>
+                    <option value="chapeaux">Chapeaux</option>
+                </select>
+            </div>
+            <div>
+                <label for="couleurs">Couleures disponibles</label>
+                <input type="checkbox" name="couleurs">Verte</input>
+                <input type="checkbox" name="couleurs">Bleue</input>
+                <input type="checkbox" name="couleurs">Rouge</input>
+                <input type="checkbox" name="couleurs">Jaune</input>
+                <input type="text" name="couleurs">Custom color</input>
+            </div>
+            <div>
+                <button type="submit">Creer</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
