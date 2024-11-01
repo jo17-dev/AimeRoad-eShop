@@ -10,6 +10,7 @@
     justify-content: space-between;
     border-bottom: 1px solid var(--vert-clair);
     position: fixed;
+    z-index: 1;
 }
 
 .nav-bar .logo{
@@ -88,18 +89,29 @@ header{
 }
 header .left-part{
     width: 50%;
+    padding-left: 5%;
 }
 header .left-part h1{
     font-size: 3.9rem;
-    padding-left: 15%;
+    width: 90%;
 }
 header .left-part h1 span{
     display: block;
+}
+header .left-part .go-to-shop-btn{
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid var(--blanc-clair);
+    color: var(--blanc-clair);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 /* right part of the site */
 .right-part{
     width: 50%;
+    /* height: 60%; */
 }
 .circle{
     background-color: var(--vert-clair);
@@ -109,19 +121,80 @@ header .left-part h1 span{
 }
 
 .circle-1{
-    width: 80%;
-    height: 40%;
+    /* width: 70%;
+    height: 30%; */
+    width: 400px;
+    height: 127px;
     margin-top: 5%;
 }
 .circle-2{
-    width: 70%;
-    height: 35%;
+    /* width: 60%;
+    height: 25%; */
+    width: 341px;
+    height: 110px;
     margin-top: -2%;
     transform: translateX(-5%);
 }
 .circle-3{
-    width: 40%;
-    height: 25%;
+    /* width: 30%;
+    height: 20%; */
+    width: 170px;
+    height: 82px;
     margin-top: -2%;
     transform: translateX(-20%);
+}
+
+/* section cathegories */
+.section-title{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.section-title-line{
+    display: inline-block;
+    width: 75vw;
+    height: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--vert-sombre);
+}
+
+/* liste des cathgories */
+.categories-container{
+    /* border: 1px solid red; */
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+}
+.categories-item{
+    border: 1px solid var(--vert-clair);
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+.categories-item{
+    display: block;
+    text-decoration: none;
+}
+.categories-item-img{
+    /* border: 1px solid green; */
+    height: 90%;
+    border-radius: 10px 10px 0px 0px;
+}
+.categories-item-name{
+    background-color: var(--vert-sombre);
+    text-align: center;
+    color: var(--blanc-clair);
+    margin-top: auto;
+    border-radius: 0px 0px 10px 10px;
 }

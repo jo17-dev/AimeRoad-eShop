@@ -16,17 +16,18 @@
         </ul>
         <ul class="user-panel">
             <li>
-                <a href="./pages/connexion.php" title="login or create account"><img src="./img/panier-320x320.png" alt="login"></a>
+                <a href="./pages/connexion.php" title="click to view your cart"><img src="./img/panier-320x320.png" alt="login"></a>
             </li>
             <li>
-                <a href="./pages/connexion.php" title="login or create account"><img src="./img/compte-320x320.png" alt="login"></a>
+                <a href="./pages/connexion.php" title="click to login or connect"><img src="./img/compte-320x320.png" alt="login"></a>
             </li>
         </ul>
     </nav>
     <!-- page de garde haha -->
     <header>
         <div class="left-part">
-            <h1><span class="light-green-text">You just found</span> <span class="white-text">Evrything</span> <span class="grey-text">You ever</span> <span class="white-text">Wanted</span></h1>
+            <h1><span class="light-green-text">You just found</span> <span class="white-text">Everything</span> <span class="grey-text">You ever</span> <span class="white-text">Wanted</span></h1>
+            <a href="./pages/listeproduits.php" class="go-to-shop-btn">Let's shop</a>
         </div>
         <div class="right-part">
             <div class="circle circle-1"></div>
@@ -34,5 +35,33 @@
             <div class="circle circle-3"></div>
         </div>
     </header>
+    <h1 class="section-title">Cathegories: <span class="section-title-line"></span></h1>
+    <!-- liste des cathegories -->
+    <section class="categories-container">
+        <div class="categories-item">
+            <a href="./pages/listeproduits.php?categorie=chaussures">
+                <img src="./img/chaussures-category.jpg" alt="categories chaussures" class="categories-item-img">
+                <p class="categories-item-name">Chaussures</p>
+            </a>
+        </div>
+        <div class="categories-item">
+            <a href="./pages/listeproduits.php?categorie=bijoux">
+                <img src="./img/bijoux-category.jpg" alt="categories des bijoux" class="categories-item-img">
+                <p class="categories-item-name">Bijoux</p>
+            </a>
+        </div>
+        <div class="categories-item">
+            <a href="./pages/listeproduits.php?categorie=manteaux">
+                <img src="./img/mantaux-category.jpg" alt="categories de Manteaux" class="categories-item-img">
+                <p class="categories-item-name">Manteaux</p>
+            </a>
+        </div>
+        <div class="categories-item">
+            <a href="./pages/listeproduits.php?categorie=chapeaux">
+                <img src="./img/chapeaux-category.jpg" alt="categories des Chapeaux" class="categories-item-img">
+                <p class="categories-item-name">Chapeaux</p>
+            </a>
+        </div>
+    </section>
 </body>
 </html>
