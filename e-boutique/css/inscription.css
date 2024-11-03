@@ -1,0 +1,46 @@
+@import url(init.css);
+
+html {
+    background-color: var(--vert-sombre);
+}
+
+.logo {
+    text-align: center;
+    margin-top: 5%;
+    font-size: large;
+}
+
+.logo > img {
+    width: 35%;
+    height: 35%;
+    image-rendering: crisp-edges;
+}
+
+.texte {
+    font-size: large;
+    color: var(--blanc-clair);
+    text-align: center;
+    margin-top: 3%;
+}
+
+.infos {
+    display: grid;
+    grid-template-columns: auto 25% auto;
+    text-align: center;
+    color: var(--blanc-clair);
+}
+
+.infos > form {
+    border: 5px solid var(--blanc-clair);
+    background-color: var(--gris);
+    margin-top: 20%;
+}
+
+.info {
+    font-size: 150%;
+    margin: 30px;
+}
+
+.info#bouton {
+    background: none;
+}
