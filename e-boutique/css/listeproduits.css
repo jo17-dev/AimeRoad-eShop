@@ -17,7 +17,6 @@
     position: fixed;
 }
 body { /* le corps de ma page en gros... */
-    font-family: Arial;
     background-color: var(--vert-sombre);
     text-align: center; /* Comment mes elements seront affichés sur la page  */
 }
