@@ -46,3 +46,19 @@ footer > div:nth-child(1) > div > img {
 footer > div:nth-child(1) > div > h4{
     margin-bottom: 10px;
 }
+
+
+/* mobile version::: */
+
+@media screen and (max-width: 420px) {
+    footer > div:nth-child(1){
+        grid-template-columns: auto;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    footer > div:nth-child(1){
+        grid-template-columns: auto;
+    }
+}

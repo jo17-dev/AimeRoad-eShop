@@ -44,3 +44,9 @@ html {
 .info#bouton {
     background: none;
 }
+
+@media screen and (max-width:992px) {
+    .infos {
+        grid-template-columns: auto 60% auto;
+    }
+}

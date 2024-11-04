@@ -1,10 +1,10 @@
 @import url("./init.css");
 @import url("./header.css");
 @import url('./footer.css');
-
+ 
 /* Css utilisés */
-
-
+ 
+ 
 /* La barre de navigation */
 .nav-bar{
     background-color: var(--vert-sombre);
@@ -18,7 +18,7 @@
 }
 body { /* le corps de ma page en gros... */
     background-color: var(--vert-sombre);
-    text-align: center; /* Comment mes elements seront affichés sur la page  */
+    text-align:center;
 }
  
 h1 { /* Notre Collection ... */
@@ -27,11 +27,11 @@ h1 { /* Notre Collection ... */
 }
  
 /* Section des produits */
-.products-section { 
+.products-section {
     padding: 20px; /* l'espacement que prends la section(div) de l'affichage des articles dans la page */
     margin-top: 20px;
 }
-
+ 
 /* L'apparence/emplacament des grilles de produits et sur les rangées */
 .products-grid {
     display:grid; /* addaptation des grilles a la page leur position et ou elles flottent*/
@@ -56,7 +56,7 @@ h1 { /* Notre Collection ... */
     margin-bottom: 10px; /* l'espace entre le titre du produit et le dessous... */
     color: var(--noir);
 }
-
+ 
 /* Description du produit */
 .description-du-produit {
     font-size: 14px;
@@ -71,7 +71,7 @@ h1 { /* Notre Collection ... */
     font-weight: bold;
     margin-bottom: 15px; /* l'espace entre le prix et le dessous */
 }
-
+ 
 /* le bouton add au panier */
 .boutton-add-panier {
     display: inline-block;
@@ -81,33 +81,33 @@ h1 { /* Notre Collection ... */
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer; /* Comme ca quand le user emmene la souris dessus il sait que cest cliquable... */
-    text-decoration: none; 
+    text-decoration: none;
 }
-
+ 
 /* effet du bouton quand touché hover */
 .boutton-add-panier:hover {
     background-color:var(--vert-clair); /* Comme ca quand le user emmene la souris dessus la couleur change ca creer un jolie effet dynamique... */
 }
-
+ 
 /* Image du produit */
 .img-produits{
     height: 200px;
 }
-
+ 
 .debut_espace_recherche{
     color: var(--blanc-clair);
 }
-
+ 
 .espace_recherche{
     padding-top: 40px;
     color: var(--blanc-clair);
 }
-
+ 
 .filtre{
     margin-top: 10px;
     height: 24px;
 }
-
+ 
 /* section à propos */
 .about-section{
     text-align: justify;
@@ -115,7 +115,7 @@ h1 { /* Notre Collection ... */
     font-weight: 100;
     padding: 20px;
 }
-
+ 
 /* section cathegories */
 .section-title{
     margin-top: 20px;
@@ -125,26 +125,26 @@ h1 { /* Notre Collection ... */
     padding-left: 20px;
     padding-right: 10px;
 }
-
+ 
 footer{
     margin-top: 20px;
     background-color: var(--noir);
     color: var(--blanc-clair);
     padding-top: 20px;
 }
-
-
+ 
+ 
 footer > div{
     font-size: small;
     padding: 10px;
 }
-
+ 
 /* partie du copyrigth */
 footer > div:nth-child(2) {
     background-color: var(--vert-sombre);
     color: var(--blanc-clair);
 }
-
+ 
 /* partie des infos */
 footer > div:nth-child(1){
     /* display: flex;
@@ -158,7 +158,7 @@ footer > div:nth-child(1){
     width: 80%;
     max-width: 800px;
 }
-
+ 
 footer > div:nth-child(1) > div{
     /* border: 1px solid blue; */
     width: 210px;
@@ -168,15 +168,44 @@ footer > div:nth-child(1) > div{
 footer > div:nth-child(1) > div > img {
     height: 40px;
 }
-
+ 
 footer > div:nth-child(1) > div > h4{
     margin-bottom: 10px;
 }
-
+ 
 /* section à propos */
 .about-section{
     text-align: justify;
     font-size: smaller;
     font-weight: 100;
     padding: 20px;
+}
+ 
+.footer-contact-info{
+    padding: 5%;
+    display: inline;
+    grid-template-columns:  auto;
+}
+ 
+ 
+/* version mobile*/
+ 
+  @media (max-width: 600px) /*ecran de 600px et moins*/
+ 
+  {
+    .products-grid {
+        grid-template-columns: auto; /*une colonne automatique*/
+    }
+ 
+    .boite_produit {
+        padding: 10px;  /*Espace que prend la boite du produit dans l'ecran mobile*/
+    }
+ 
+    .img-produits {
+        height: 150px; /*Nouvelle taille d'image du produit par rapport aux appareils mobiles*/
+    }
+ 
+    .footer-contact-info{
+        padding: 5%;
+    }
 }
