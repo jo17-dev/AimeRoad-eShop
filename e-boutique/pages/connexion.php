@@ -9,7 +9,7 @@
 <body>
 
     <div class="logo">
-    <img src="../img/logo-320x60.png" alt="">
+    <a href="../index.html"><img src="../img/logo-320x60.png" alt=""></a>
     </div>
 
     <div class="texte">
