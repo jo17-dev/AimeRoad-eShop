@@ -17,6 +17,7 @@ footer > div{
 footer > div:nth-child(2) {
     background-color: var(--vert-sombre);
     color: var(--blanc-clair);
+    text-align: center;
 }
 
 /* partie des infos */

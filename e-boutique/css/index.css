@@ -20,7 +20,7 @@ header{
     background-color: var(--vert-sombre);
     min-height: 80vh;
     width: 100%;
-    padding-top: 40px;
+    /* padding-top: 40px; */
     display: flex;
     flex-direction: row;
 }
@@ -153,18 +153,17 @@ header .left-part .go-to-shop-btn{
 @media screen and (max-width: 425px) {
     header{
         width: 100vw;
-        height: auto;
+        min-height: auto;
+        /* padding-top: 50px; */
     }
     header .right-part{
-        position: absolute;
-        margin-inline: auto;
-        width: 100vw;
         display: none;
     }
     header .left-part{
         width: 100%;
         /* position: absolute; */
         margin-inline: auto;
+        /* padding-top: 40px; */
     }
 
     header .left-part h1 span{
@@ -172,8 +171,10 @@ header .left-part .go-to-shop-btn{
     }
 
     header .left-part h1{
+        /* background-color: purple; */
         font-size: 2.4rem;
         width: 90%;
+        margin: auto;
     }
     header .left-part .go-to-shop-btn{
         margin-top: 10px;
@@ -183,8 +184,12 @@ header .left-part .go-to-shop-btn{
     header .left-part > div{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
+        /* margin-top: auto;
+        margin-bottom: 0; */
+        margin-right: auto;
+        margin-left: auto;
     }
 
 
