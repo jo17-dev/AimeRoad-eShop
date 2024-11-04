@@ -19,6 +19,7 @@
 header{
     background-color: var(--vert-sombre);
     min-height: 80vh;
+    width: 100%;
     padding-top: 40px;
     display: flex;
     flex-direction: row;
@@ -42,6 +43,7 @@ header .left-part .go-to-shop-btn{
     padding: 10px;
     border-radius: 5px;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* right part of the site */
@@ -116,13 +118,16 @@ header .left-part .go-to-shop-btn{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     display: block;
 }
 .categories-item a{
     text-decoration: none;
 }
 .categories-item-img{
-    /* border: 1px solid green; */
+    margin-left: auto;
+    margin-right: auto;
+
     height: 90%;
     border-radius: 10px 10px 0px 0px;
 }
@@ -140,4 +145,73 @@ header .left-part .go-to-shop-btn{
     font-size: smaller;
     font-weight: 100;
     padding: 20px;
+}
+
+/* media querries */
+
+
+@media screen and (max-width: 425px) {
+    header{
+        width: 100vw;
+        height: auto;
+    }
+    header .right-part{
+        position: absolute;
+        margin-inline: auto;
+        width: 100vw;
+        display: none;
+    }
+    header .left-part{
+        width: 100%;
+        /* position: absolute; */
+        margin-inline: auto;
+    }
+
+    header .left-part h1 span{
+        display: inline-block;
+    }
+
+    header .left-part h1{
+        font-size: 2.4rem;
+        width: 90%;
+    }
+    header .left-part .go-to-shop-btn{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    header .left-part > div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+
+    .categories-container{
+        padding: 10px;
+        flex-direction: column;
+        margin-inline: auto;
+    }
+
+    .categories-container .categories-item{
+        /* margin: auto; */
+        margin-right: 0;
+        margin-left: auto;
+        margin-top: 20px;
+    }
+
+    .categories-container .categories-item:nth-child(odd){
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .section-title{
+        font-size: large;
+        color: var(--vert-clair);
+    }
+
+    .section-title .section-title-line{
+        display: none;
+    }
 }
