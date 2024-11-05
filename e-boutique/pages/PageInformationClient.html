@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>etape1</title>
+    <link rel="stylesheet" href="../css/PageInformationClient.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>Formulaire d'inscription</header>
+      <form action="#" class="form">
+        <div class="input-box">
+          <label>Nom complet :</label>
+          <input type="text" placeholder="Entrez le nom complet" required />
+        </div>
+
+        <div class="input-box">
+          <label>Email :</label>
+          <input type="text" placeholder="Entrez l'email" required />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Numéro de téléphone :</label>
+            <input type="number" placeholder="Entrez le numéro de téléphone" required />
+          </div>
+
+          <div class="input-box">
+            <label>Date de naissance :</label>
+            <input type="date" placeholder="Entrez votre date de naissance" required />
+          </div>
+        </div>
+
+        <div class="gender-box">
+          <h3>Genre :</h3>
+          <div class="option-genre">
+            <div class="gender">
+              <input type="radio" id="Homme" name="genre" checked />
+              <label>Homme</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="Femme" name="genre" />
+              <label>Femme</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="Autre" name="genre" />
+              <label>Autre</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-box address">
+          <label>Adresse :</label>
+          <input type="text" placeholder="Entrez votre adresse" required />
+          <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Pays</option>
+                <option>Amérique</option>
+                <option>Canada</option>
+                <option>Inde</option>
+                <option>Maroc</option>
+                <option>France</option>
+                <option>Allemagne</option>
+                <option>Australie</option>
+                <option>Brésil</option>
+                <option>Japon</option>
+                <option>Italie</option>
+                <option>Mexique</option>
+                <option>Royaume-Uni</option>
+                <option>Chine</option>
+                <option>Afrique du Sud</option>
+              </select>
+            </div>
+            <input type="text" placeholder="Entrez votre ville" required />
+          </div>
+          <div class="column">
+            <input type="text" placeholder="Entrez votre province" required />
+            <input type="number" placeholder="Entrez le code postal" required />
+          </div>
+        </div>
+
+        <button type="submit">Soumettre</button>
+      </form>
+    </div>
+  </body>
+</html>
