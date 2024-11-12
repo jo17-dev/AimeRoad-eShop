@@ -1,6 +1,6 @@
 /* ceci est le css de la barre de nagivation *
- 
 /*-------------- barre de navigation */
+@import url("./init.css");
 .nav-bar{
     background-color: var(--vert-sombre);
     height: 40px;
@@ -96,6 +96,7 @@
 /* ceci est le code pour le footer des pages */
 /* footer */
 footer{
+    margin-top: auto;
     margin-top: 20px;
     background-color: var(--noir);
     color: var(--blanc-clair);
@@ -158,10 +159,15 @@ footer > div:nth-child(1) > div > h4{
     }
 }
  
-
-
-
-
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* S'assure que l'élément prend toute la hauteur de la page */
+}
+ 
+ 
+ 
 .container{
   margin: 0 auto;
   padding: 0;
@@ -188,7 +194,7 @@ table{
     background: #1C6D67 ;
     font-weight: normal;
  }
-
+ 
  td{
     padding: 10px 5px;
  }
