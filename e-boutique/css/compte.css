@@ -14,7 +14,7 @@
     background-color: var(--vert-sombre);
     padding-top: 20px;
     float: left;
-    height: 90vh;
+    height: calc(100vh - 40px);
 }
 .aside-nav .section-title{
     margin-top: 5vh;
@@ -53,6 +53,9 @@
 
 .user-info h1{
     padding: 10px;
+    margin-bottom: 70px;
+    color: var(--noir);
+    text-align: center;
 }
 .user-info-raws .profile-picture{
     /* border: 1px solid var(--vert-sombre); */
@@ -71,6 +74,7 @@
     color: var(--noir);
     border-radius: 10px;
     width: 60%;
+    max-width: 600px;
     margin: auto;
     border: 1px solid var(--vert-clair);
 }

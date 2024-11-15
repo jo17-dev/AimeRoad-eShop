@@ -48,6 +48,8 @@ const createFormItem =(name, type="text", placeholder="", required=false)=>{
 
 const createFormElement = (inputsType=["text"], targetNames=["nom"] ,inputsNumbers=1, placeholder=["entrez la valeur"], required=[])=>{
     let form = document.createElement("form");
+    let submitBtn = createFormItem("Valider", "submit");
+        submitBtn.className = "submit-btn";
 
     form.setAttribute("method", "get");
     form.setAttribute("action", "url_ffcdedd");
@@ -56,14 +58,45 @@ const createFormElement = (inputsType=["text"], targetNames=["nom"] ,inputsNumbe
         form.appendChild(createFormItem(targetNames[i] || targetNames[0], inputsType[i] || inputsType[inputsType.length -1], placeholder[i] || placeholder[placeholder.length - 1]));
     }
 
-    form.appendChild(createFormItem("Valider", "submit"));
+    form.appendChild(submitBtn);
 
     return form;
 }
 
 
+// fonction qui affiche un po-up de modification à l'utilisateur dépendement du champ qu'il veut modifier
+const afficherPopUpUser = (champAModifier)=>{
+    if(champAModifier == "nom"  || champAModifier == "prenom" || champAModifier == "email" ){
+        afficher(
+            "Modifier mon "+champAModifier,
+            createFormElement([champAModifier == "email" ? champAModifier : "text"], [champAModifier],
+                2, 
+                ["Entrer votre "+champAModifier,"re-entrez votre "+champAModifier]
+            )
+        );
+    }else if(champAModifier == "password"){   
+        afficher(
+            "Modifier mon mot de passe",
+            createFormElement(["password"], 
+                [champAModifier], 
+                3, 
+                ["Entrez l'ancien mot de passe", "entrez le nouveau mot de passe","Confirmez le mot de passe"]
+            )
+        );
+    }
+}
 
-// fonctions à utiliser
-const modificationUniquePopUp = (champAModifier)=>{
-    afficher("Modifier mon "+champAModifier, createFormElement(["text"], [champAModifier], 2, ["Entrer votre nom", "re-entrez votre nom"]));
+// fonction pour le po-up de supression de la confirmation
+const afficherPopUpSupression = ()=>{
+    // let contenue = document.createElement("p");
+    // contenue.innerText = "Voulez-vous vraiment suprimer votre compte ?"
+    afficher(
+        "Confirmation de suppresion",
+        createFormElement(
+            [], 
+            [], 
+            0, 
+            []
+        )
+    );
 }
