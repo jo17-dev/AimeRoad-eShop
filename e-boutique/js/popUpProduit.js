@@ -1,1 +1,0 @@
-// contient une fonction pour afficher le pop-up au click sur un produit

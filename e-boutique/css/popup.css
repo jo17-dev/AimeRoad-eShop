@@ -1,0 +1,73 @@
+/* this is the file for the popup template  */
+
+.whole-page-mapper{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 199;
+    background: var(--vert-transparent);
+    backdrop-filter: blur(4px);
+}
+
+.cancel-icon{
+    width: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    position: fixed;
+    /* top: calc(50% - 100px); défini en js
+    left: 50%; */
+    cursor:  pointer;
+    border-radius: 50% 50%;
+    padding: 4px;
+
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: borderblink 1s 1s infinite;
+}
+@keyframes borderblink {
+    from{
+        border: 1px solid var(--blanc-clair);
+    }
+
+    to{
+        border: none;
+    }
+}
+
+
+.pop-up-container{
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-inline: auto;
+    z-index: 2000;
+
+    /* width: 400px; */
+    /* height: 400px; */
+
+    text-align: center;
+
+    background-color: var(--vert-clair);
+    
+    padding-bottom: 50px;
+}
+
+.pop-up-container h1{
+    font-size: larger;
+    color: var(--blanc-clair);
+}
+
+.pop-up-container form{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-top: 10%;
+
+}
+.pop-up-container form > *{
+    margin-top: 10px;
+}
+/* .pop-up-container .header */
