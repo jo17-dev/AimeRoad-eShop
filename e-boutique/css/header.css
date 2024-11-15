@@ -9,8 +9,9 @@
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid var(--vert-clair);
-    position: fixed;
-    z-index: 1;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
 
     animation: scroll-header-effect 1ms forwards;
     animation-timeline: scroll();
