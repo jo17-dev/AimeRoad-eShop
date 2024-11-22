@@ -91,7 +91,7 @@ const afficherPopUpSupression = ()=>{
     // let contenue = document.createElement("p");
     // contenue.innerText = "Voulez-vous vraiment suprimer votre compte ?"
     afficher(
-        "Confirmation de suppresion",
+        "Confirmation de suppresion du compte",
         createFormElement(
             [], 
             [], 
