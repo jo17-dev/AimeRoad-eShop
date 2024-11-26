@@ -16,7 +16,6 @@ class CategorieDAO implements DAO {
         $result  = $statement->execute();
 
         $rows = $statement->fetchAll();
-
         return null;
 
     }

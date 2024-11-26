@@ -1,14 +1,7 @@
 <?php
 
-// include_once $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/models/"
-// include_once("../config/configDB.php");
+include_once("config/configDB.php");
 
-interface ConfigDB {	
-    const BD_HOTE = "localhost";
-    const BD_UTILISATEUR = "root";
-    const BD_MOT_PASSE = ""; // modifier ceci par vos credentials
-    const BD_NOM = "aimeroad";
-}
 
 // ********* Classe englobante de PDO *************
 class ConnexionBD {

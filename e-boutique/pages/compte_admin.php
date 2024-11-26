@@ -1,6 +1,7 @@
 <?php
 include_once("../models/dao/categorieDAO.class.php");
 
+CategorieDAO::chercher(4);
 ?>
 
 <!DOCTYPE html>
