@@ -1,7 +1,5 @@
 <?php
-include_once("../models/dao/categorieDAO.class.php");
-
-CategorieDAO::chercher(4);
+include_once("../controleurs/controleurAdmin.class.php");
 ?>
 
 <!DOCTYPE html>
@@ -51,12 +49,12 @@ CategorieDAO::chercher(4);
             </ul>
         </div>
         <div class="user-info">
-            <h1>Bienvenue _user !</h1>
+            <h1>Bienvenue <?php echo $user->getNom() ?> !</h1>
             <div class="user-info-raws">
                 <img src="../img/admin_profile.png" alt="Your profile" class="profile-picture">
-                <p class="user-info-item">Nom: <strong>Joel</strong> </p>
-                <p class="user-info-item">Prénom: <strong>jo17-dev</strong> </p>
-                <p class="user-info-item">Addresse mail: <strong>joel@jo17dev.com</strong> </p>
+                <p class="user-info-item">Nom: <strong> <?php echo $user->getNom() ?> </strong> </p>
+                <p class="user-info-item">Prénom: <strong> <?php echo $user->getPrenom() ?> </strong> </p>
+                <p class="user-info-item">Addresse mail: <strong><?php echo $user->getEmail() ?></strong> </p>
             </div>
         </div>
     </section>
