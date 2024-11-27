@@ -32,7 +32,10 @@ abstract class Utilisateur {
     public function getDate_modification(){return $this->date_modification;}
     public function getDate_creation(){return $this->date_creation;}
 
-    // Fonctions
-    
+    // Mutateurs (Set)
+    public function setNom($nom){$this->nom = $nom; return $this;}
+    public function setPrenom($prenom){$this->prenom = $prenom; return $this;}
+    public function setEmail($email){$this->email = $email; return $this;}
+    public function setHashed_password($hashed_password){$this->hashed_password = $hashed_password; return $this;}
 }
   
