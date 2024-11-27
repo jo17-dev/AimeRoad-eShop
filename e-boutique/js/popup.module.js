@@ -51,8 +51,8 @@ const createFormElement = (inputsType=["text"], targetNames=["nom"] ,inputsNumbe
     let submitBtn = createFormItem("Valider", "submit");
         submitBtn.className = "submit-btn";
 
-    form.setAttribute("method", "get");
-    form.setAttribute("action", "url_ffcdedd");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "");
 
     for(let i=0; i< inputsNumbers; i++){
         form.appendChild(createFormItem(targetNames[i] || targetNames[0], inputsType[i] || inputsType[inputsType.length -1], placeholder[i] || placeholder[placeholder.length - 1]));
