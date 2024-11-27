@@ -11,7 +11,7 @@ const afficher =( headerText="Continuez votre action", form=document.createEleme
         title.innerText = headerText;
 
     let cancelBtn = document.createElement("img");
-        cancelBtn.src = "../img/cancel-icon.webp";
+        cancelBtn.src = "img/cancel-icon.webp";
         cancelBtn.className = "cancel-icon";
 
     
@@ -51,8 +51,8 @@ const createFormElement = (inputsType=["text"], targetNames=["nom"] ,inputsNumbe
     let submitBtn = createFormItem("Valider", "submit");
         submitBtn.className = "submit-btn";
 
-    form.setAttribute("method", "get");
-    form.setAttribute("action", "url_ffcdedd");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "?action=modifierAdmin");
 
     for(let i=0; i< inputsNumbers; i++){
         form.appendChild(createFormItem(targetNames[i] || targetNames[0], inputsType[i] || inputsType[inputsType.length -1], placeholder[i] || placeholder[placeholder.length - 1]));
@@ -69,7 +69,7 @@ const afficherPopUpUser = (champAModifier)=>{
     if(champAModifier == "nom"  || champAModifier == "prenom" || champAModifier == "email" ){
         afficher(
             "Modifier mon "+champAModifier,
-            createFormElement([champAModifier == "email" ? champAModifier : "text"], [champAModifier],
+            createFormElement([champAModifier == "email" ? champAModifier : "text"], [champAModifier, champAModifier+"Confirm"],
                 2, 
                 ["Entrer votre "+champAModifier,"re-entrez votre "+champAModifier]
             )
@@ -78,7 +78,7 @@ const afficherPopUpUser = (champAModifier)=>{
         afficher(
             "Modifier mon mot de passe",
             createFormElement(["password"], 
-                [champAModifier], 
+                [champAModifier+"Old", champAModifier+"New", champAModifier+"NewConfirm"], 
                 3, 
                 ["Entrez l'ancien mot de passe", "entrez le nouveau mot de passe","Confirmez le mot de passe"]
             )
