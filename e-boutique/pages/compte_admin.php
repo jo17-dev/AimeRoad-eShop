@@ -1,3 +1,9 @@
+<?php
+include_once("../models/dao/categorieDAO.class.php");
+
+CategorieDAO::chercher(4);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/compte.css">
     <link rel="stylesheet" href="../css/popup.css">
-    <title>Document</title>
+    <title>Aimeroad</title>
 </head>
 <body>
     <nav class="nav-bar">
