@@ -59,6 +59,19 @@
     public function setHashedPassword(string $hashed_password): void {
         $this->hashed_password = $hashed_password;
     }
+
+    public function setPassword(string $target): void{
+        $this->hashed_password = hash("sha256", $target);
+    }
+
+    public function comparePassword(string $target): bool {
+        if(hash("sha256", $target) == $this->hashed_password){
+            return true;
+        }
+        return false;
+    }
+
+    
 }
 
 ?>

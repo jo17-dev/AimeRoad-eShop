@@ -1,19 +1,14 @@
-<?php
-// page index
-$basePath = $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/index.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Document</title>
 </head>
 <body>
     <nav class="nav-bar">
-        <img src="../img/logo-320x60.png" class="logo" alt="Aimeroad">
+        <img src="img/logo-320x60.png" class="logo" alt="Aimeroad">
         <ul class="links">
             <li><a href="">Accueil</a></li>
             <li><a href="">À propos</a></li>
@@ -21,10 +16,10 @@ $basePath = $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/index.ph
         </ul>
         <ul class="user-panel">
             <li>
-                <a href="../index.php?view=PagePanier" title="click to view your cart"><img src="../img/panier-320x320.png" alt="login"></a>
+                <a href="../index.php?view=PagePanier" title="click to view your cart"><img src="img/panier-320x320.png" alt="login"></a>
             </li>
             <li>
-                <a href="../index.php?view=compte_admin" title="click to login or connect"><img src="../img/compte-320x320.png" alt="login"></a>
+                <a href="?action=voirAdmin" title="click to login or connect"><img src="img/compte-320x320.png" alt="login"></a>
             </li>
         </ul>
     </nav>
@@ -48,25 +43,25 @@ $basePath = $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/index.ph
     <section class="categories-container">
         <div class="categories-item">
             <a href="./pages/listeproduits.php?categorie=chaussures">
-                <img src="../img/chaussures-category.jpg" alt="categories chaussures" class="categories-item-img">
+                <img src="img/chaussures-category.jpg" alt="categories chaussures" class="categories-item-img">
                 <p class="categories-item-name">Chaussures</p>
             </a>
         </div>
         <div class="categories-item">
             <a href="./pages/listeproduits.php?categorie=bijoux">
-                <img src="../img/bijoux-category.jpg" alt="categories des bijoux" class="categories-item-img">
+                <img src="img/bijoux-category.jpg" alt="categories des bijoux" class="categories-item-img">
                 <p class="categories-item-name">Bijoux</p>
             </a>
         </div>
         <div class="categories-item">
             <a href="./pages/listeproduits.php?categorie=manteaux">
-                <img src="../img/mantaux-category.jpg" alt="categories de Manteaux" class="categories-item-img">
+                <img src="img/mantaux-category.jpg" alt="categories de Manteaux" class="categories-item-img">
                 <p class="categories-item-name">Manteaux</p>
             </a>
         </div>
         <div class="categories-item">
             <a href="./pages/listeproduits.php?categorie=chapeaux">
-                <img src="../img/chapeaux-category.jpg" alt="categories des Chapeaux" class="categories-item-img">
+                <img src="img/chapeaux-category.jpg" alt="categories des Chapeaux" class="categories-item-img">
                 <p class="categories-item-name">Chapeaux</p>
             </a>
         </div>
@@ -84,7 +79,7 @@ $basePath = $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/index.ph
     <footer>
         <div class="footer-contact-info">
             <div>
-                <img src="../img/logo-320x60.png" alt="AimeRoad">
+                <img src="img/logo-320x60.png" alt="AimeRoad">
                 <p>Aimeroad</p>
                 <p>Articles de marque</p>
 

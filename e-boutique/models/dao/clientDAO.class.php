@@ -20,8 +20,20 @@ class ClientDAO implements DAO {
         if($row == false){
             return [];
         }
+        
+        ConnexionBD::close();
 
         return $row;
+    }
+
+    public static function miseAJour(int $id, string $changements): bool{
+        $connexion =  ConnexionBD::getInstance();
+
+        $result = $connexion->exec("UPDATE client SET " .$changements . " WHERE id=$id");
+
+        ConnexionBD::close();
+
+        return $result;
     }
 }
 
