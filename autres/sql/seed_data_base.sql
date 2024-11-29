@@ -30,18 +30,18 @@ VALUES (2);
 
 -- Création des produits
 -- 10 produits avec des prix et des catégories attribuées
-INSERT INTO Produit (idCategorie, nom, prixUnitaire, urlPhoto) 
+INSERT INTO Produit (idCategorie, nom, prixUnitaire, quantite, urlPhoto) 
 VALUES
-    (1, 'Bague en or', 250.00, 'https://aimeroad.com/bague.jpg'),
-    (1, 'Collier diamant', 1200.00, 'https://aimeroad.com/collier.jpg'),
-    (2, 'Chapeau Fedora', 50.00, 'https://aimeroad.com/fedora.jpg'),
-    (2, 'Casquette de baseball', 25.00, 'https://aimeroad.com/casquette.jpg'),
-    (3, 'Manteau en laine', 180.00, 'https://aimeroad.com/manteau.jpg'),
-    (3, 'Blouson en cuir', 150.00, 'https://aimeroad.com/blouson.jpg'),
-    (4, 'Baskets de course', 70.00, 'https://aimeroad.com/baskets.jpg'),
-    (4, 'Boots en cuir', 120.00, 'https://aimeroad.com/boots.jpg'),
-    (1, 'Bracelet argent', 75.00, 'https://aimeroad.com/bracelet.jpg'),
-    (2, 'Chapeau Panama', 90.00, 'https://aimeroad.com/panama.jpg');
+    (1, 'Bague en or', 250.00, 45,'https://aimeroad.com/bague.jpg'),
+    (1, 'Collier diamant', 1200.00, 40, 'https://aimeroad.com/collier.jpg'),
+    (2, 'Chapeau Fedora', 50.00, 37,'https://aimeroad.com/fedora.jpg'),
+    (2, 'Casquette de baseball', 25.00, 56,'https://aimeroad.com/casquette.jpg'),
+    (3, 'Manteau en laine', 180.00, 67,'https://aimeroad.com/manteau.jpg'),
+    (3, 'Blouson en cuir', 150.00, 56,'https://aimeroad.com/blouson.jpg'),
+    (4, 'Baskets de course', 70.00, 12, 'https://aimeroad.com/baskets.jpg'),
+    (4, 'Boots en cuir', 120.00, 56,'https://aimeroad.com/boots.jpg'),
+    (1, 'Bracelet argent', 75.00, 10,'https://aimeroad.com/bracelet.jpg'),
+    (2, 'Chapeau Panama', 90.00, 23,'https://aimeroad.com/panama.jpg');
 
 -- Création du panier pour le premier client (idClient = 1)
 -- Ajout de 2 produits dans le panier du client 1
