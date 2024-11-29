@@ -4,8 +4,14 @@ include_once "models/administrateur.class.php";
 if(!is_null($controleur)){
     $user = $controleur->getAdministrateur();
 
+/**
+ * cette vue n'étant reservée qu'as la "vue", les autres actions sur cette page comme la modification des
+ * infos admins, tout autre seras rédirigé vers l'action
+ */
     if(isset($_GET['action'])){
-
+        if($_GET['action'] != "voirAdmin"){
+            header("Location: ?action=voirAdmin");
+        }
     }
 
 }else{
