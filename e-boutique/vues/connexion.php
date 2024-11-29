@@ -31,11 +31,16 @@
         </div>
 
         <div class="info">
-        <a href="./inscription.php" title="Créer un nouveau compte AimeRaud">S'inscrire</a><br>
+        <label for="seSouvenir">Se souvenir</label>
+        <input type="checkbox" title="seSouvenir" id="seSouvenir"><br>
         </div>
 
         <div class="info" id="bouton">
         <button type="submit">Se Connecter</button>
+        </div>
+
+        <div class="info">
+        <a href="./inscription.php" title="Créer un nouveau compte AimeRaud">S'inscrire</a><br>
         </div>
 
     </form>

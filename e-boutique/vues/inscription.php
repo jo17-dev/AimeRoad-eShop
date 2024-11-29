@@ -44,15 +44,15 @@
         <input type="password" name="mdp" id="mdp" required>
         </div>
 
-        <div class="info">
-        Vous possédez un compte?<br>
-        <a href="./connexion.php" title="">Se connecter</a><br>
-        </div>
-
         <div class="info" id="bouton">
         <button type="submit">S'inscrire</button>
         </div>
 
+        <div class="info">
+        Vous possédez un compte?<br>
+        <a href="./connexion.php" title="">Se connecter</a><br>
+        </div>
+        
     </form>
     <div></div>
     </div>

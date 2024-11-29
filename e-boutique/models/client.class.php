@@ -1,17 +1,15 @@
 <?php
 class Client extends Utilisateur {
-    private $id;
-    private $nom;
-    private $prenom;
-    private $email;
-    private $hashed_password;
-    private $date_creation;
-    private $date_modification;
+    private int $id;
+    private string $nom;
+    private string $prenom;
+    private string $email;
+    private string $hashed_password;
 
     // Constructeur
-    public function __construct($id, $nom, $prenom, $email, $hashed_password, $date_creation, $date_modification) 
+    public function __construct(int $id, string $nom, string $prenom, string $email, string $hashed_password)
     {
-        parent::__construct($id, $nom, $prenom, $email, $hashed_password, $date_creation, $date_modification);
+        parent::__construct($id, $nom, $prenom, $email, $hashed_password);
     }
 
     // Fonctions spécifiques à utilisateur
