@@ -1,9 +1,15 @@
 <?php
 include_once "models/administrateur.class.php";
-include_once "controleurs/voirAdmin.controleur.php";
 
 if(!is_null($controleur)){
     $user = $controleur->getAdministrateur();
+
+    if(isset($_GET['action'])){
+
+    }
+
+}else{
+    header("Location: ?action=''");
 }
 
 ?>
@@ -46,7 +52,8 @@ if(!is_null($controleur)){
 
             <h5 class="section-title">Aller vers...</h5>
             <ul class="item-container">
-                <li class="item-list"><a href="./listeproduits.html">Lister les produits</a></li>
+                <li class="item-list"><a href="?action=listeProduitsAdmin">Voir le stock</a></li>
+                <li class="item-list"><a href="?action=historiqueCommandesAdmin">Commandes</a></li>
             </ul>
 
             <h5 class="section-title">Autre</h5>

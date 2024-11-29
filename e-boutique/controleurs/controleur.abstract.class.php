@@ -6,7 +6,7 @@
  abstract class Controleur {
     private string $userRole;
     public function __construct(){
-        session_start();
+        session_status() == PHP_SESSION_ACTIVE ? "" : session_start();
         $userRole = "visiteur";
          
         if(isset($_SESSION['user'])){

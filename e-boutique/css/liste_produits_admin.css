@@ -1,0 +1,26 @@
+.title{
+    margin: 4vh;
+    text-align: center;
+}
+
+table{
+    width: 95%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+thead{
+    background-color: var(--vert-sombre);
+    color: var(--blanc-clair);
+}
+
+td{
+    text-align: center;
+    padding: 5px;
+    border-left: 1px solid var(--vert-clair);
+    border-right: 1px solid var(--vert-clair);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--gris);
+}

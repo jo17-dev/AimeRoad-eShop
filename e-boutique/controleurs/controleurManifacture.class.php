@@ -4,6 +4,8 @@ include_once "controleur.abstract.class.php";
 include_once "voirAcceuil.controleur.php";
 include_once "voirAdmin.controleur.php";
 include_once "modifierAdmin.controleur.php";
+include_once "controleurListeproduitsAdmin.class.php";
+include_once "controleurHistoriqueComandes.class.php";
 
 class ControleurManifacture {
     /**
@@ -15,46 +17,20 @@ class ControleurManifacture {
             return new VoirAdmin();
         }elseif ($action ==="modifierAdmin"){
             return new ModifierAdmin();
+        }elseif($action == "listeProduitsAdmin"){
+            return new ControleurListeProduitAdmin();
+        }elseif($action == "historiqueCommandesAdmin"){
+            return new ControleurHistoriqueCommandes();
         }elseif($action == ""){
+            // return 
+        }elseif($action == ""){
+                
+        }
+        
+        
+        elseif($action == ""){
             return new VoirAcceuil();
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // ici, on vas faire toutes les validations avant de faire l'action
-            // if(isset($_POST["nom"])){ // soumission de la modification du nom
-            //     if(!is_null($_POST["nomConfirm"]) && $_POST["nom"] == $_POST["nomConfirm"]){
-            // }
-            // }else if(isset($_POST["prenom"])){
-            //     if(!is_null($_POST["prenomConfirm"]) && $_POST["prenom"] == $_POST["prenomConfirm"]){
-                
-            //     $ctlAdmin->update("prenom", $_POST["prenom"]);
-            // }
-            // }else if(isset($_POST["email"])){
-            //     if(!is_null($_POST["emailConfirm"]) && $_POST["email"] == $_POST["emailConfirm"]){
-                
-            //     $ctlAdmin->update("email", $_POST["email"]);
-            // }
-            // }else if(isset($_POST["passwordOld"])){
-            //     if(!is_null($_POST["passwordNewConfirm"]) && $_POST["passwordNew"] == $_POST["passwordNewConfirm"] && $user->comparePassword($_POST["passwordOld"])){
-                
-            //     $ctlAdmin->update("password", hash("sha256", $_POST["passwordNew"]));
-            //     }
-            // }
-
-
 ?>
