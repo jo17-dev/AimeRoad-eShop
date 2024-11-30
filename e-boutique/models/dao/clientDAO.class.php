@@ -12,10 +12,10 @@ class ClientDAO implements DAO {
     public static function chercherParId(int $id): array {
         $connexion =  ConnexionBD::getInstance();
 
-        $statement = $connexion->prepare("SELECT * FROM client INNER JOIN administrateur ON client.id=administrateur.idClient");
-        $statement->execute();
+        $commande = $connexion->prepare("SELECT * FROM client INNER JOIN administrateur ON client.id=administrateur.idClient");
+        $commande->execute();
 
-        $row = $statement->fetchAll();
+        $row = $commande->fetchAll();
 
         if($row == false){
             return [];
@@ -26,6 +26,28 @@ class ClientDAO implements DAO {
         return $row;
     }
 
+    public static function inserer(Client $unClient) {
+        try { 
+        $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+        throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+        $commande = $connexion->prepare("INSERT INTO client (id, nom, prenom, email, password, date_creation, date_modification) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $tab = array(
+            $unClient->getId(),
+            $unClient->getNom(),
+            $unClient->getPrenom(),
+            $unClient->getEmail(),
+            $unClient->getHashed_password(),
+            $unClient->getDate_creation(),
+            $unClient->getDate_modification()
+        );
+        ConnexionBD::close();
+        return $commande->execute($tab);
+
+    }
+
     public static function miseAJour(int $id, string $changements): bool{
         $connexion =  ConnexionBD::getInstance();
 
@@ -34,6 +56,23 @@ class ClientDAO implements DAO {
         ConnexionBD::close();
 
         return $result;
+    }
+
+    public static function chercherParEmail(string $email) {
+        try { 
+        $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+        throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+        $commande = $connexion->prepare("SELECT * FROM client WHERE email LIKE '$email'");
+        $commande->execute();
+
+        $row = $commande->fetch();
+        
+        ConnexionBD::close();
+
+        return $row;
+
     }
 }
 

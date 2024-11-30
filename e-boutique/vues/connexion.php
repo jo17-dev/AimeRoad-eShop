@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Se Connecter - AimeRaud</title>
+    <title>Se Connecter - AimeRoad</title>
     <link rel="stylesheet" href="../css/connexion.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
 
     <div class="infos">
     <div></div>
-    <form action="" method="post">
+    <form action="gestionSession.php" method="post">
 
         <div class="info">
         <label for="adresse">Adresse courriel</label><br>
@@ -32,7 +32,7 @@
 
         <div class="info">
         <label for="seSouvenir">Se souvenir</label>
-        <input type="checkbox" title="seSouvenir" id="seSouvenir"><br>
+        <input type="checkbox" title="seSouvenir" name="seSouvenir" id="seSouvenir"><br>
         </div>
 
         <div class="info" id="bouton">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="info">
-        <a href="./inscription.php" title="Créer un nouveau compte AimeRaud">S'inscrire</a><br>
+        <a href="./inscription.php" title="Créer un nouveau compte AimeRoad">S'inscrire</a><br>
         </div>
 
     </form>
