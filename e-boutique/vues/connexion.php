@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se Connecter - AimeRoad</title>
-    <link rel="stylesheet" href="../css/connexion.css">
+    <link rel="stylesheet" href="css/connexion.css">
 </head>
 <body>
 
     <div class="logo">
-    <a href="../index.html"><img src="../img/logo-320x60.png" alt=""></a>
+    <a href="../index.html"><img src="img/logo-320x60.png" alt=""></a>
     </div>
 
     <div class="texte">
@@ -18,7 +18,7 @@
 
     <div class="infos">
     <div></div>
-    <form action="gestionSession.php" method="post">
+    <form action="?action=seConnecter" method="post">
 
         <div class="info">
         <label for="adresse">Adresse courriel</label><br>

@@ -4,6 +4,10 @@ include_once "controleur.abstract.class.php";
 include_once "voirAcceuil.controleur.php";
 include_once "voirAdmin.controleur.php";
 include_once "modifierAdmin.controleur.php";
+include_once "seConnecter.controleur.php";
+include_once "seDeconnecter.controleur.php";
+include_once "voirClient.controleur.php";
+include_once "voirConnexion.controleur.php";
 
 class ControleurManifacture {
     /**
@@ -17,6 +21,14 @@ class ControleurManifacture {
             return new ModifierAdmin();
         }elseif($action == ""){
             return new VoirAcceuil();
+        }elseif($action == "seConnecter") {
+            return new SeConnecter();
+        }elseif($action == "seDeconnecter") {
+            return new SeDeconnecter();
+        }elseif($action == "voirClient") {
+            return new VoirClient();
+        }elseif($action == "voirConnexion") {
+            return new voirConnexion();
         }
     }
 }

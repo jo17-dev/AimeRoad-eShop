@@ -19,7 +19,7 @@
                 <a href="../index.php?view=PagePanier" title="click to view your cart"><img src="img/panier-320x320.png" alt="login"></a>
             </li>
             <li>
-                <a href="?action=voirAdmin" title="click to login or connect"><img src="img/compte-320x320.png" alt="login"></a>
+                <a href="?action=voirConnexion" title="click to login or connect"><img src="img/compte-320x320.png" alt="login"></a>
             </li>
         </ul>
     </nav>

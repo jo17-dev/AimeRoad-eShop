@@ -64,8 +64,7 @@ class ClientDAO implements DAO {
         } catch (Exception $e) { 
         throw new Exception("Impossible d’obtenir la connexion à la BD.");
         }
-        $commande = $connexion->prepare("SELECT * FROM client WHERE email LIKE '$email'");
-        $commande->execute();
+        $commande = $connexion->query("SELECT * FROM client WHERE email LIKE '$email'");
 
         $row = $commande->fetch();
         
@@ -73,6 +72,25 @@ class ClientDAO implements DAO {
 
         return $row;
 
+    }
+
+    public static function estAdmin(int $id) : bool {
+        try { 
+            $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+            throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+        $commande = $connexion->query("SELECT * FROM administrateur WHERE idClient = '$id'");
+
+        $row = $commande->fetch();
+
+        ConnexionBD::close();
+        
+        if(isset($row['idClient'])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
