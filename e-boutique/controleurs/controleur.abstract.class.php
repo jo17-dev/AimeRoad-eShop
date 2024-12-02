@@ -7,10 +7,10 @@
     private string $userRole;
     public function __construct(){
         session_start();
-        $userRole = "visiteur";
+        $this->userRole = "visiteur";
          
-        if(isset($_SESSION['user'])){
-            $userRole = "client";
+        if(isset($_SESSION['utilisateurConnecte'])){
+            $this->userRole = "client";
         }
         /**
          * 1- ouverture de lasession
@@ -20,7 +20,7 @@
     }
 
     public function getUtilisateur(): string {
-        return $this->utilisateur;
+        return $this->userRole;
     }
 
     public abstract function executerAction() :string;

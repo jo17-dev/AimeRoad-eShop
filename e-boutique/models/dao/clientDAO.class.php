@@ -12,10 +12,10 @@ class ClientDAO implements DAO {
     public static function chercherParId(int $id): array {
         $connexion =  ConnexionBD::getInstance();
 
-        $statement = $connexion->prepare("SELECT * FROM client INNER JOIN administrateur ON client.id=administrateur.idClient");
-        $statement->execute();
+        $commande = $connexion->prepare("SELECT * FROM client INNER JOIN administrateur ON client.id=administrateur.idClient");
+        $commande->execute();
 
-        $row = $statement->fetchAll();
+        $row = $commande->fetchAll();
 
         if($row == false){
             return [];
@@ -26,6 +26,17 @@ class ClientDAO implements DAO {
         return $row;
     }
 
+    public static function inserer(string $nom, string $prenom, string $email, string $password) {
+        try { 
+        $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+        throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+
+        $connexion->exec("INSERT INTO Client (nom, prenom, email, password) VALUES('$nom', '$prenom', '$email', '$password')");
+        ConnexionBD::close();
+    }
+
     public static function miseAJour(int $id, string $changements): bool{
         $connexion =  ConnexionBD::getInstance();
 
@@ -34,6 +45,56 @@ class ClientDAO implements DAO {
         ConnexionBD::close();
 
         return $result;
+    }
+
+    public static function chercherParEmail(string $email) {
+        try { 
+        $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+        throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+        $commande = $connexion->query("SELECT * FROM client WHERE email LIKE '$email'");
+
+        $row = $commande->fetch();
+        
+        ConnexionBD::close();
+
+        return $row;
+
+    }
+
+    public static function estAdmin(int $id) : bool {
+        try { 
+            $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+            throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+        $commande = $connexion->query("SELECT * FROM administrateur WHERE idClient = '$id'");
+
+        $row = $commande->fetch();
+
+        ConnexionBD::close();
+        
+        if(isset($row['idClient'])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public static function chercherIDnonUtilisé() : int {
+        try { 
+            $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+            throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+        $commande = $connexion->query("SELECT MAX(id) FROM client");
+
+        $row = $commande->fetch();
+
+        ConnexionBD::close();
+
+        return $row[0] + 1;
     }
 }
 
