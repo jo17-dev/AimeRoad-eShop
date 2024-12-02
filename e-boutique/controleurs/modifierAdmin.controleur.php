@@ -51,6 +51,7 @@ class ModifierAdmin extends Controleur{
                 ClientDAO::miseAJour($this->admin->getId() , "password = '".$this->admin->getHashedPassword()."' ");
             }
         }
+
         return "compte_admin";
     }
 

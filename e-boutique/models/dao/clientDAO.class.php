@@ -96,6 +96,21 @@ class ClientDAO implements DAO {
 
         return $row[0] + 1;
     }
+
+    public static function chercherTous(): array{
+        try { 
+            $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+            throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+        $commande = $connexion->query("SELECT * FROM client LEFT JOIN administrateur ON client.id = administrateur.idClient");
+
+        $rows = $commande->fetchAll();
+
+        ConnexionBD::close();
+
+        return $rows;
+    }
 }
 
 ?>

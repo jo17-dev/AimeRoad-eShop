@@ -6,11 +6,14 @@
  abstract class Controleur {
     private string $userRole;
     public function __construct(){
-        session_start();
+        session_status() == PHP_SESSION_ACTIVE ? "" : session_start();
         $this->userRole = "visiteur";
          
         if(isset($_SESSION['utilisateurConnecte'])){
             $this->userRole = "client";
+            if($_SESSION['utilisateurConnecte']['estAdmin'] == true){
+                $this->userRole = "admin";
+            }
         }
         /**
          * 1- ouverture de lasession
