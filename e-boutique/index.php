@@ -12,10 +12,19 @@ include_once "controleurs/controleurManifacture.class.php";
 
 // header("location: vues/". $view . ".php");
 
+include 'header.php'; ?>
+
+<section>
+    <h2>Page d'accueil</h2>
+    <p>Ceci est le contenu principal de la page d'accueil.</p>
+</section>
+
+<?php include 'footer.php'; 
+?>
 
 
 
-
+<?php
 //----------- version 2 du de ce truc: créer un organe routeur pour définir toutes les url possibles:
 
 $action = "";
