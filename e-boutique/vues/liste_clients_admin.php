@@ -10,7 +10,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
  */
     if(isset($_GET['action'])){
         if($_GET['action'] != "voirListeClients"){
-            header("Location: ?action=voirAdmin");
+            header("Location: ?action=voirListeClients");
         }
     }
 
@@ -94,12 +94,16 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
                         <td><?php echo $compte['email'] ?></td>
                         <td>
                             <?php if(isset($compte['idClient'])){ // si le compte est un compte admin, on peux seuleument retirer ses droits?>
-                                <a class="wrapper" href="?action=surprimerDroitsAdmin"><button class="btn-rights btn-delete-account" >Suprimer les droits admin</button></a>
+                                <a class="wrapper" href="?action=surprimerDroitsAdmin&idClient=<?php echo $compte['id'] ?>"><button class="btn-rights btn-delete-account" >Suprimer les droits admin</button></a>
                             <?php }else{ ?>
                                 <a class="wrapper" href="?action=ajouterDroitsAdmin&idClient=<?php echo $compte['id'] ?>" ><button class="btn-rights">Ajouter les droits admin</button></a>
                             <?php } ?>
                         </td>
-                        <td> <button class="btn-rights btn-delete-account" >supprimer compte</button> </td>
+                        <td>
+                        <a class="wrapper" href="?action=suprimerCompte&idClient=<?php echo $compte['id'] ?>" >
+                            <button class="btn-rights btn-delete-account" >supprimer compte</button>
+                        </a>
+                        </td>
                     </tr>
                     <?php
                             }
