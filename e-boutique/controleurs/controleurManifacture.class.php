@@ -12,6 +12,8 @@ include_once "voirClient.controleur.php";
 include_once "voirConnexion.controleur.php";
 include_once "seInscrire.controleur.php";
 include_once "voirInscription.controleur.php";
+include_once "voirListeClient.controleur.php";
+include_once "ajouterDroitsAdmin.controleur.php";
 
 class ControleurManifacture {
     /**
@@ -27,8 +29,10 @@ class ControleurManifacture {
             return new ControleurListeProduitAdmin();
         }elseif($action == "historiqueCommandesAdmin"){
             return new ControleurHistoriqueCommandes();
-        }elseif($action == ""){
-            // return 
+        }elseif($action == "voirListeClients"){
+            return new VoirListeClient();
+        }elseif($action == "ajouterDroitsAdmin"){
+            return new AjouterDroitsAdmin();
         }elseif($action == ""){
                 
         }

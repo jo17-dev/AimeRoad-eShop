@@ -9,7 +9,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
  * infos admins, tout autre seras rédirigé vers l'action
  */
     if(isset($_GET['action'])){
-        if($_GET['action'] != "voirAdmin"){
+        if($_GET['action'] != "voirListeClients"){
             header("Location: ?action=voirAdmin");
         }
     }
@@ -27,6 +27,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/compte.css">
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/liste_produits_admin.css">
     <title>Aimeroad</title>
 </head>
 <body>
@@ -60,7 +61,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
             <ul class="item-container">
                 <li class="item-list"><a href="?action=listeProduitsAdmin">Voir le stock</a></li>
                 <li class="item-list"><a href="?action=historiqueCommandesAdmin">Commandes</a></li>
-                <li class="item-list"><a href="?action=voirListeClients">Clients</a></li>
+                <li class="item-list"><a href="index.php?action=historiqueCommandesAdmin">Clients</a></li>
             </ul>
 
             <h5 class="section-title">Autre</h5>
@@ -70,42 +71,45 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
             </ul>
         </div>
         <div class="user-info">
-            <h1>Bienvenue <?php echo $user->getNom() ?> !</h1>
-            <div class="user-info-raws">
-                <img src="img/admin_profile.png" alt="Your profile" class="profile-picture">
-                <p class="user-info-item">Nom: <strong> <?php echo $user->getNom() ?> </strong> </p>
-                <p class="user-info-item">Prénom: <strong> <?php echo $user->getPrenom() ?> </strong> </p>
-                <p class="user-info-item">Addresse mail: <strong><?php echo $user->getEmail() ?></strong> </p>
-            </div>
+            <h1>Liste des clients.</h1>
+            <table>
+                <thead>
+                    <td>code</td>
+                    <td>Nom</td>
+                    <td>Prenom </td>
+                    <td>Email</td>
+                    <td colspan="2" >Actions</td>
+                </thead>
+                <tbody>
+                    <?php
+                        if(count($controleur->getListeClients()) == 0){
+                            echo "<tr><td colspan='5' class='no-datas-warning'>Aucune donnée disponible pour cet affichage</td></tr>";
+                        }else{
+                            foreach($controleur->getListeClients() as $compte){
+                    ?>
+                    <tr>
+                        <td> <?php echo $compte['id'] ?> </td>
+                        <td><?php echo $compte['nom'] ?></td>
+                        <td><?php echo $compte['prenom'] ?></td>
+                        <td><?php echo $compte['email'] ?></td>
+                        <td>
+                            <?php if(isset($compte['idClient'])){ // si le compte est un compte admin, on peux seuleument retirer ses droits?>
+                                <a class="wrapper" href="?action=surprimerDroitsAdmin"><button class="btn-rights btn-delete-account" >Suprimer les droits admin</button></a>
+                            <?php }else{ ?>
+                                <a class="wrapper" href="?action=ajouterDroitsAdmin&idClient=<?php echo $compte['id'] ?>" ><button class="btn-rights">Ajouter les droits admin</button></a>
+                            <?php } ?>
+                        </td>
+                        <td> <button class="btn-rights btn-delete-account" >supprimer compte</button> </td>
+                    </tr>
+                    <?php
+                            }
+                        }
+                    ?>
+                </tbody>
+            </table>
         </div>
     </section>
     <script src="js/popup.module.js"></script>
-    <!-- footer part -->
-    <!-- <footer>
-        <div class="footer-contact-info">
-            <div>
-                <img src="./img/logo-320x60.png" alt="AimeRoad">
-                <p>Aimeroad</p>
-                <p>Articles de marque</p>
 
-            </div>
-            <div>
-                <h4>Développeurs(e)s</h4>
-                <p>Joël</p>
-                <p>Daryl</p>
-                <p>Sami</p>
-                <p>Aymane</p>
-                <p><a href="mailto:620022crosemont.qc.ca">préocupations</a></p>
-            </div>
-            <div>
-                <h4>Service à la clientèlle</h4>
-                <p>Nous sommes disponibles tous les jours, H-24</p>
-                <address>support@aimeroad.com</address>
-            </div>
-        </div>
-        <div>
-            <p>Copyright 2024. projet de classe</p>
-        </div>
-    </footer> -->
 </body>
 </html>
