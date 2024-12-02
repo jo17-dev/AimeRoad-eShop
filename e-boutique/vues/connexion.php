@@ -9,7 +9,7 @@
 <body>
 
     <div class="logo">
-    <a href="../index.html"><img src="img/logo-320x60.png" alt=""></a>
+    <a href="?action=voirAcceuil"><img src="img/logo-320x60.png" alt=""></a>
     </div>
 
     <div class="texte">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="info">
-        <a href="./inscription.php" title="Créer un nouveau compte AimeRoad">S'inscrire</a><br>
+        <a href="?action=voirInscription" title="Créer un nouveau compte AimeRoad">S'inscrire</a><br>
         </div>
 
     </form>

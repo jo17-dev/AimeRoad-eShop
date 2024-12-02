@@ -8,6 +8,8 @@ include_once "seConnecter.controleur.php";
 include_once "seDeconnecter.controleur.php";
 include_once "voirClient.controleur.php";
 include_once "voirConnexion.controleur.php";
+include_once "seInscrire.controleur.php";
+include_once "voirInscription.controleur.php";
 
 class ControleurManifacture {
     /**
@@ -28,7 +30,13 @@ class ControleurManifacture {
         }elseif($action == "voirClient") {
             return new VoirClient();
         }elseif($action == "voirConnexion") {
-            return new voirConnexion();
+            return new VoirConnexion();
+        }elseif($action == "seInscrire") {
+            return new SeInscrire();
+        }elseif($action == "voirInscription") {
+            return new VoirInscription();
+        }elseif($action == "voirAcceuil") {
+            return new VoirAcceuil();
         }
     }
 }

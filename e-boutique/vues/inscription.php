@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - AimeRoad</title>
-    <link rel="stylesheet" href="../css/inscription.css">
+    <link rel="stylesheet" href="css/inscription.css">
 </head>
 <body>
 <div class="logo">
-    <a href="../index.html"><img src="../img/logo-320x60.png" alt=""></a>
+    <a href="?action=voirAcceuil"><img src="img/logo-320x60.png" alt=""></a>
     </div>
 
     <div class="texte">
@@ -17,7 +17,7 @@
 
     <div class="infos">
     <div></div>
-    <form action="" method="post">
+    <form action="?action=seInscrire" method="post">
 
         <div class="info">
         <label for="nom">Nom</label><br>
@@ -35,11 +35,6 @@
         </div>
 
         <div class="info">
-        <label for="num">Numéro de téléphone</label><br>
-        <input type="tel" name="num" id="num" required>
-        </div>
-
-        <div class="info">
         <label for="mdp">Mot de passe</label><br>
         <input type="password" name="mdp" id="mdp" required>
         </div>
@@ -50,7 +45,7 @@
 
         <div class="info">
         Vous possédez un compte?<br>
-        <a href="./connexion.php" title="">Se connecter</a><br>
+        <a href="?action=voirConnexion" title="">Se connecter</a><br>
         </div>
         
     </form>

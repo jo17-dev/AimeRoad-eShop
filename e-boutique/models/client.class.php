@@ -8,7 +8,7 @@ class Client extends Utilisateur {
         parent::__construct($id, $nom, $prenom, $email, $hashed_password, $date_creation, $date_modification);
     }
 
-    // Fonctions spécifiques à utilisateur
-
+    // Fonctions spécifiques à Client
+    
 }
 ?>

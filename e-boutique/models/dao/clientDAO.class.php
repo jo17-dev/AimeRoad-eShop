@@ -26,26 +26,15 @@ class ClientDAO implements DAO {
         return $row;
     }
 
-    public static function inserer(Client $unClient) {
+    public static function inserer(string $nom, string $prenom, string $email, string $password) {
         try { 
         $connexion=ConnexionBD::getInstance();   
         } catch (Exception $e) { 
         throw new Exception("Impossible d’obtenir la connexion à la BD.");
         }
-        $commande = $connexion->prepare("INSERT INTO client (id, nom, prenom, email, password, date_creation, date_modification) 
-        VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $tab = array(
-            $unClient->getId(),
-            $unClient->getNom(),
-            $unClient->getPrenom(),
-            $unClient->getEmail(),
-            $unClient->getHashed_password(),
-            $unClient->getDate_creation(),
-            $unClient->getDate_modification()
-        );
-        ConnexionBD::close();
-        return $commande->execute($tab);
 
+        $connexion->exec("INSERT INTO Client (nom, prenom, email, password) VALUES('$nom', '$prenom', '$email', '$password')");
+        ConnexionBD::close();
     }
 
     public static function miseAJour(int $id, string $changements): bool{
@@ -91,6 +80,21 @@ class ClientDAO implements DAO {
         } else {
             return false;
         }
+    }
+    
+    public static function chercherIDnonUtilisé() : int {
+        try { 
+            $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+            throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+        $commande = $connexion->query("SELECT MAX(id) FROM client");
+
+        $row = $commande->fetch();
+
+        ConnexionBD::close();
+
+        return $row[0] + 1;
     }
 }
 
