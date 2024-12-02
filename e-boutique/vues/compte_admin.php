@@ -1,8 +1,8 @@
 <?php
 include_once "models/administrateur.class.php";
 
-if(!is_null($controleur)){
-    $user = $controleur->getAdministrateur();
+if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin'])){
+    $user = new Administrateur($_SESSION['utilisateurConnecte']['id'], $_SESSION['utilisateurConnecte']['nom'], $_SESSION['utilisateurConnecte']['prenom'], $_SESSION['utilisateurConnecte']['email'], $_SESSION['utilisateurConnecte']['password']);
 
 /**
  * cette vue n'étant reservée qu'as la "vue", les autres actions sur cette page comme la modification des

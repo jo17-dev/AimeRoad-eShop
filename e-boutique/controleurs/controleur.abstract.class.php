@@ -11,6 +11,9 @@
          
         if(isset($_SESSION['utilisateurConnecte'])){
             $this->userRole = "client";
+            if($_SESSION['utilisateurConnecte']['estAdmin'] == true){
+                $this->userRole = "admin";
+            }
         }
         /**
          * 1- ouverture de lasession

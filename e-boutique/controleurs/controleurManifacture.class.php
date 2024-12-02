@@ -32,8 +32,6 @@ class ControleurManifacture {
         }elseif($action == ""){
                 
         }
-        
-        
         elseif($action == ""){
             return new VoirAcceuil();
         }elseif($action == "seConnecter") {

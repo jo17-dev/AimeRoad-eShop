@@ -10,7 +10,7 @@
     <nav class="nav-bar">
         <img src="img/logo-320x60.png" class="logo" alt="Aimeroad">
         <ul class="links">
-            <li><a href="">Accueil</a></li>
+            <li><a href="?action=voirAcceuil">Accueil</a></li>
             <li><a href="">À propos</a></li>
             <li><a href="">Contact</a></li>
         </ul>
