@@ -31,6 +31,43 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
     <title>Aimeroad</title>
 </head>
 <body>
+    <?php include_once("includes/header.php")?>
+
+    <h1 class="title">Historique des commandes:</h1>
+    <table>
+        <thead>
+            <td>indentifiant</td>
+            <td>client</td>
+            <td>Prix total </td>
+            <td>Date de commande</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>client@gmail.com</td>
+                <td>250 $</td>
+                <td>2024-11-22 14:49:45</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>client@gmail.com</td>
+                <td>250 $</td>
+                <td>2024-11-22 14:49:45</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>client@gmail.com</td>
+                <td>250 $</td>
+                <td>2024-11-22 14:49:45</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>client@gmail.com</td>
+                <td>250 $</td>
+                <td>2024-11-22 14:49:45</td>
+            </tr>
+        </tbody>
+    </table>
     <nav class="nav-bar">
         <img src="img/logo-320x60.png" class="logo" alt="Aimeroad">
         <ul class="links">

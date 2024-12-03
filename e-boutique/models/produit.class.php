@@ -1,7 +1,7 @@
 <?php
 // cette classe est de test.
 
- class Administrateur {
+ class Produit {
     // Propriétés de la classe
     private int $id;
     private string $idCategorie;

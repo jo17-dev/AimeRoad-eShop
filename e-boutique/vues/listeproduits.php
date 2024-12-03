@@ -8,22 +8,7 @@
 </head>
 <body>
    <!--Barre de navigation sur toutes les pages-->
-    <nav class="nav-bar">
-        <img src="img/logo-320x60.png" class="logo" alt="Aimeroad">
-        <ul class="links">
-            <li><a href="">Accueil</a></li>
-            <li><a href="">À propos</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-        <ul class="user-panel">
-            <li>
-                <a href="./pages/connexion.php" title="click to view your cart"><img src="img/panier-320x320.png" alt="login"></a>
-            </li>
-            <li>
-                <a href="./pages/connexion.php" title="click to login or connect"><img src="img/compte-320x320.png" alt="login"></a>
-            </li>
-        </ul>
-    </nav>
+    <?php include_once("includes/header.php")?>
  
     <!-- Titre de la page en plus de la barre de recherche avec un filtres(...specifications a add plus tard pour rendre plus intérésent cateégories etc) -->
     <h1>Notre Collection d'articles Emeraudes</h1>
@@ -176,31 +161,6 @@
         que vous allez certainement aimer!</p>
 </section>
 <!-- footer part -->
-<footer>
-    <div class="footer-contact-info">
-        <div>
-            <img src="img/logo-320x60.png" alt="AimeRoad">
-            <p>Aimeroad</p>
-            <p>Articles de marque</p>
- 
-        </div>
-        <div>
-            <h4>Développeurs(e)s</h4>
-            <p>Joël</p>
-            <p>Daryl</p>
-            <p>Sami</p>
-            <p>Aymane</p>
-            <p><a href="mailto:620022crosemont.qc.ca">préocupations</a></p>
-        </div>
-        <div>
-            <h4>Service à la clientèlle</h4>
-            <p>Nous sommes disponibles tous les jours, H-24</p>
-            <address>support@aimeroad.com</address>
-        </div>
-    </div>
-    <div>
-        <p>Copyright 2024. projet de classe</p>
-    </div>
-</footer>
+    <?php include_once("includes/footer.php")?>
 </body>
 </html>
