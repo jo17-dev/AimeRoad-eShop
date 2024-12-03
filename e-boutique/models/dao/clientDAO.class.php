@@ -37,6 +37,17 @@ class ClientDAO implements DAO {
         ConnexionBD::close();
     }
 
+    public static function supprimer(int $id) {
+        try { 
+        $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+        throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+
+        $connexion->exec("DELETE FROM Client WHERE id=$id");
+        ConnexionBD::close();
+    }
+
     public static function miseAJour(int $id, string $changements): bool{
         $connexion =  ConnexionBD::getInstance();
 

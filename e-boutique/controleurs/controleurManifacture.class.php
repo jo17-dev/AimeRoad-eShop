@@ -14,7 +14,7 @@ include_once "seInscrire.controleur.php";
 include_once "voirInscription.controleur.php";
 include_once "voirListeClient.controleur.php";
 include_once "ajouterDroitsAdmin.controleur.php";
-
+include_once "supprimerClient.controleur.php";
 class ControleurManifacture {
     /**
      * Dans cette methode, on fait les traintements par le controleur et on renvoie la vue à charger
@@ -52,6 +52,8 @@ class ControleurManifacture {
             return new VoirInscription();
         }elseif($action == "voirAcceuil") {
             return new VoirAcceuil();
+        }elseif($action == "supprimerClient") {
+            return new SupprimerClient();
         }
     }
 }

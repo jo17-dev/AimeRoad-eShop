@@ -55,7 +55,7 @@
             <h5 class="section-title">Autre</h5>
             <ul class="item-container">
                 <li class="item-list"><a href="index.php?action=seDeconnecter">Déconnexion</a></li>
-                <li class="item-list"><a href="#">Supprimer le compte</a></li>
+                <li class="item-list"><a href="?action=supprimerClient">Supprimer le compte</a></li>
             </ul>
         </div>
         <div class="user-info">
