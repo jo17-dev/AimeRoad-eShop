@@ -14,6 +14,7 @@ include_once "seInscrire.controleur.php";
 include_once "voirInscription.controleur.php";
 include_once "voirListeClient.controleur.php";
 include_once "ajouterDroitsAdmin.controleur.php";
+include_once "voirListeProduits.controleur.php";
 
 class ControleurManifacture {
     /**
@@ -52,7 +53,10 @@ class ControleurManifacture {
             return new VoirInscription();
         }elseif($action == "voirAcceuil") {
             return new VoirAcceuil();
+         }elseif($action == "voirListeProduits") {
+            return new VoirProduit();
         }
     }
 }
+    
 ?>

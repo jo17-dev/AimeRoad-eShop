@@ -21,22 +21,8 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="nav-bar">
-        <img src="img/logo-320x60.png" class="logo" alt="Aimeroad">
-        <ul class="links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="">À propos</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-        <ul class="user-panel">
-            <li>
-                <a href="./vues/connexion.php" title="click to view your cart"><img src="img/panier-320x320.png" alt="login"></a>
-            </li>
-            <li>
-                <a href="?action=voirConnexion" title="click to login or connect"><img src="img/compte-320x320.png" alt="login"></a>
-            </li>
-        </ul>
-    </nav>
+    <?php include_once("includes/header.php")?>
+
     <section class="main-container">
         <div class="aside-nav">
             <h5 class="section-title">Gestion des identifants</h5>
@@ -49,7 +35,7 @@
 
             <h5 class="section-title">Aller vers...</h5>
             <ul class="item-container">
-                <li class="item-list"><a href="./listeproduits.html">Liste des produits</a></li>
+                <li class="item-list"><a href="?action=voirListeProduit">Liste des produits</a></li>
             </ul>
 
             <h5 class="section-title">Autre</h5>
