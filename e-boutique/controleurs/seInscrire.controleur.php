@@ -23,9 +23,9 @@
 
                     $unClient = ClientDAO::chercherParEmail($_POST['adresse']);
 
-                    $_SESSION['utilisateurConnecte'] = $unClient;
-
                     $unClient['estAdmin']=false;
+
+                    $_SESSION['utilisateurConnecte'] = $unClient;
 
                     return "compte_client";
                 }
