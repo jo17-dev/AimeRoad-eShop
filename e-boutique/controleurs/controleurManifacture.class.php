@@ -16,6 +16,7 @@ include_once "voirListeClient.controleur.php";
 include_once "ajouterDroitsAdmin.controleur.php";
 include_once "suprimerDroitsAdmin.controleur.php";
 include_once "suprimerCompte.controleur.php";
+include_once "modifierClient.controleur.php";
 
 class ControleurManifacture {
     /**
@@ -58,6 +59,8 @@ class ControleurManifacture {
             return new VoirInscription();
         }elseif($action == "voirAcceuil") {
             return new VoirAcceuil();
+        }elseif($action == "modifierClient"){
+            return new ModifierClient();
         }
     }
 }

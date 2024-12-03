@@ -30,7 +30,7 @@ class VoirAdmin extends Controleur{
     }
 
     public function executerAction(): string {
-        return "compte_admin";
+        return $this->vue;
     }
 
 }

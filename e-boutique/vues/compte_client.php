@@ -18,6 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/compte.css">
+    <link rel="stylesheet" href="css/popup.css">
     <title>Document</title>
 </head>
 <body>
@@ -38,26 +39,8 @@
         </ul>
     </nav>
     <section class="main-container">
-        <div class="aside-nav">
-            <h5 class="section-title">Gestion des identifants</h5>
-            <ul class="item-container">
-                <li class="item-list"><a href="#">Modifier mon nom</a></li>
-                <li class="item-list"><a href="#">Modifier mon prenom</a></li>
-                <li class="item-list"><a href="#">Modifier mon email</a></li>
-                <li class="item-list"><a href="#">Modifier mot de passe</a></li>
-            </ul>
-
-            <h5 class="section-title">Aller vers...</h5>
-            <ul class="item-container">
-                <li class="item-list"><a href="./listeproduits.html">Liste des produits</a></li>
-            </ul>
-
-            <h5 class="section-title">Autre</h5>
-            <ul class="item-container">
-                <li class="item-list"><a href="index.php?action=seDeconnecter">Déconnexion</a></li>
-                <li class="item-list"><a href="#">Supprimer le compte</a></li>
-            </ul>
-        </div>
+        <!-- ajouter la left nav bar -->
+         <?php include_once("vues/includes/client_side_nav.include.php") ?>
         <div class="user-info">
             <h1>Bienvenue <?php echo $unClient['nom'] ?></h1>
             <div class="user-info-raws">
@@ -68,5 +51,6 @@
             </div>
         </div>
     </section>
+    <script src="js/popupClient.module.js"></script>
 </body>
 </html>

@@ -15,6 +15,8 @@ class SupprimerDroitsAdmin extends Controleur {
                 $result = AdminDAO::supprimer( (int) $_GET['idClient']);
                 if(!$result){
                     // l'operation a échoué
+                }else{
+                    $_SESSION['utilisateurConnecte']['estAdmin'] = false;
                 }
             }else{
                 // erreur de traitement ahahaha
