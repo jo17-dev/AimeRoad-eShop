@@ -11,8 +11,6 @@
         function executerAction(): string
         {
             if(parent::getUtilisateur() != "visiteur") {
-                $d = $_SESSION['utilisateurConnecte'];
-                print_r($d['estAdmin']);
                 return "compte_client";
             } else {
                 return "connexion";
