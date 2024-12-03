@@ -9,7 +9,7 @@
     <title>Ameroad - liste des produits</title>
 </head>
 <body>
-    <?php include_once("includes/header.php")?>
+    <?php include_once("vues/includes/header.php")?>
 
     <h1 class="title">États des stocks:</h1>
     <table>

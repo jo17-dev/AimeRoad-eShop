@@ -1,7 +1,7 @@
 <?php
  
-include("connexionBD.class.php");
-include("dao.interface.php");
+include_once("connexionBD.class.php");
+include_once("dao.interface.php");
  
  
 class ProduitDAO implements DAO {

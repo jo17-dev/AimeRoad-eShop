@@ -7,7 +7,7 @@
     <title>Aimeroad</title>
 </head>
 <body>
-    <?php include_once("includes/header.php")?>
+    <?php include_once("vues/includes/header.php")?>
     <div id="container">
         <h1>Formulaire de création de produit</h1>
         <form action="?action=creerProduit" method="post">
@@ -58,6 +58,6 @@
         </form>
     </div>
         <!-- footer part -->
-        <?php include_once("includes/footer.php")?>
+        <?php include_once("<vues>includes/footer.php")?>
 </body>
 </html>

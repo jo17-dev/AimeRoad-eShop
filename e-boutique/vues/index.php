@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include_once("includes/header.php")?>
+    <?php include_once("vues/includes/header.php")?>
     <!-- page de garde haha -->
     <header>
         <div class="left-part">
             <h1><span class="light-green-text">You just found</span> <span class="white-text">Everything</span> <span class="grey-text">You ever</span> <span class="white-text">Wanted</span></h1>
             <div>
-                <a href="./pages/listeproduits.html" class="go-to-shop-btn">Voir les produits</a>
+                <a href="?action=voirListeProduits" class="go-to-shop-btn">Voir les produits</a>
                 <a href="./pages/inscription.php" class="go-to-shop-btn">S'inscrire</a>
             </div>
         </div>
@@ -61,6 +61,6 @@
         Eaque sit aspernatur id asperiores, deserunt autem ipsa alias, doloremque ratione odit nemo aut amet nesciunt velit ipsam assumenda reiciendis ex voluptas iure. Possimus, ipsam eos omnis quaerat incidunt vero.</p>
     </section>
     <!-- footer part -->
-    <?php include_once("includes/footer.php")?>
+    <?php include_once("vues/includes/footer.php")?>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 //include_once "models/dao/clientDAO.class.php";
 include_once "models/produit.class.php";
+include_once "models/dao/produitDAO.class.php";
 
 class CreerProduit extends Controleur{
 	// ******************* Attributs
@@ -30,8 +31,8 @@ class CreerProduit extends Controleur{
 			$photo = $_POST["photo"];
 			$prix = $_POST["prix"];
 			$quantite = $_POST["quantite"];
-			$unProduit = new Produit($code, $description, $marque, $photo, $prix, $quantite);
-			ProduitDAO::inserer($unProduit);
+			// $unProduit = new Produit($IdCategorie, $marque, $photo, $prix, $quantite);
+			// ProduitDAO::AjouterProduit();
 		}
 
 
