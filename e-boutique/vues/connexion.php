@@ -22,7 +22,14 @@
 
         <div class="info">
         <label for="adresse">Adresse courriel</label><br>
-        <input type="email" name="adresse" id="adresse" required><br>
+        <?php 
+        if (isset($_COOKIE['utilisateur'])) {
+            $cookie = $_COOKIE['utilisateur'];
+            echo "<input type='email' name='adresse' id='adresse' value='$cookie' required><br>";
+        } else  {
+            echo "<input type='email' name='adresse' id='adresse' required><br>";
+        }
+        ?>
         </div>
 
         <div class="info">

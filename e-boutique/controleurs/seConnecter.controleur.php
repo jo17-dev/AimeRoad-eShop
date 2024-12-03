@@ -17,7 +17,7 @@
                 if ($unClient['password'] == $unMotDePasse) {
                     if ((isset($_POST["seSouvenir"]) && $_POST["seSouvenir"] != null)) {
                         // Cookie se souvenir
-                        setcookie("utilisteur", $_POST["seSouvenir"], time() + (60 * 10)); // Druée : le temps courant + 10 minutes
+                        setcookie('utilisateur', $_POST['adresse'], time() + (60 * 30)); // Durée du cookie : le temps courant + 30 minutes
                     }
                     if (ClientDAO::estAdmin($unClient['id'])) {
                         $unClient['estAdmin']=true;
