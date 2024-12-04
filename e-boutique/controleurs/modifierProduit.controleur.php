@@ -3,29 +3,14 @@
 include_once "models/produit.class.php";
 
 class ModifierProduit extends Controleur{
-    	// ******************* Attributs
-	private $tabProduits;
 
-	// ******************* Constructeur vide
 	public function __construct()
 	{
 		parent::__construct();
-		$this->tabProduits = array();
-	}
 
-	// ******************* Accesseurs
-	public function getTabProduits():array
-	{
-		return $this->tabProduits;
 	}
-
-	// ******************* Méthode exécuter action
 	public function executerAction():string
 	{
-		// Vérifier si une session est déjà démarrée avant d'appeler session_start()
-		if (session_status() === PHP_SESSION_NONE) {
-			session_start();
-		}
 	
 		if (isset($_SESSION['code'])) {
 			$unCode = $_SESSION['code'];
@@ -43,17 +28,12 @@ class ModifierProduit extends Controleur{
 				$unProduit->ajouterAuStock($quantite);
 	
 				// Modifier le produit dans la base de données
-				ProduitDAO::modifier($unProduit);
+				// ProduitDAO::modifier($unProduit);
+
+
 			}
 		}
-	
-		if (isset($_REQUEST["annuler"])) {
-			$this->tabProduits = ProduitDAO::chercherTous();
-			return "pageAdministration";
-		}
-	
-		$this->tabProduits = ProduitDAO::chercherTous();
-		return "pageVoirProduits";
+		return "index";
 
 }
 }

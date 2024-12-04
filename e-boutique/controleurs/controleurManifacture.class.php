@@ -18,6 +18,10 @@ include_once "suprimerDroitsAdmin.controleur.php";
 include_once "suprimerCompte.controleur.php";
 include_once "modifierClient.controleur.php";
 include_once "voirListeProduits.controleur.php";
+include_once "voirAjouterProduit.controleur.php";
+include_once "creerProduit.controleur.php";
+include_once "supprimerProduit.controleur.php";
+
 
 class ControleurManifacture {
     /**
@@ -64,6 +68,12 @@ class ControleurManifacture {
             return new ModifierClient();
          }elseif($action == "voirListeProduits") {
             return new VoirProduit();
+        }elseif($action == "voirAjouterProduit"){
+            return new VoirAjouterProduit();
+        }elseif($action == "creerProduit"){
+            return new CreerProduit();
+        }elseif($action == "suprimerProduit"){
+            return new SupprimerProduit();
         }
     }
 }

@@ -63,29 +63,26 @@ class ProduitDAO implements DAO {
  
  
  
-    public static function SupprimerProduit(int $SupprimerProduit): array {
+    public static function SupprimerProduit(int $SupprimerProduit): bool {
         $connexion =  ConnexionBD::getInstance();
  
-        $statement = $connexion->prepare("DELETE * FROM produit WHERE id=$SupprimerProduit");
-        $statement->execute();
- 
-        $row = $statement->fetchAll();
- 
-        if($row == false){
-            return [];
-        }
+        $statement = $connexion->query("DELETE FROM panier WHERE idProduit=$SupprimerProduit");
+        $statement = $connexion->query("DELETE FROM produit WHERE id=$SupprimerProduit");
        
         ConnexionBD::close();
+        if($statement == false){
+            return false;
+        }
  
-        return $row;
+        return true;
     }
  
-    public static function AjouterProduit(String $idCategorie, String $nom, float $prixUnitaire, int $quantite, string $urlPhoto): array {
+    public static function AjouterProduit(String $nom, int $idCategorie, float $prixUnitaire, int $quantite, string $urlPhoto): array {
         $connexion =  ConnexionBD::getInstance();
  
-        $statement = $connexion->prepare("INSERT INTO produit ( idCategorie, nom, prixUnitaire, quantite, urlPhoto)
+        $statement = $connexion->prepare("INSERT INTO produit (idCategorie, nom, prixUnitaire, quantite, urlPhoto)
         VALUES
-            ( $idCategorie, $nom, $prixUnitaire, $quantite,$urlPhoto)");
+            ( $idCategorie, '$nom', $prixUnitaire, $quantite, '$urlPhoto')");
         $statement->execute();
  
         $row = $statement->fetchAll();

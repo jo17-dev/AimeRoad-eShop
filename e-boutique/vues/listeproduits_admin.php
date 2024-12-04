@@ -53,18 +53,18 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
                         if(count($controleur->getTabProduits()) == 0){
                             echo "<tr><td colspan='5' class='no-datas-warning'>Aucune donnée disponible pour cet affichage</td></tr>";
                         }else{
-                            foreach($controleur->getTabProduits() as $compte){
+                            foreach($controleur->getTabProduits() as $item){
                     ?>
                     <tr>
-                        <td> <?php echo $compte['id'] ?> </td>
-                        <td><?php echo $compte['nom'] ?></td>
-                        <td><?php echo $compte['prixUnitaire'] . "$" ?></td>
-                        <td><?php echo $compte['quantite'] ?></td>
+                        <td> <?php echo $item['id'] ?> </td>
+                        <td><?php echo $item['nom'] ?></td>
+                        <td><?php echo $item['prixUnitaire'] . "$" ?></td>
+                        <td><?php echo $item['quantite'] ?></td>
                         <td>
-                            <a class="wrapper" href="?action=surprimerDroitsAdmin&idClient=<?php echo $compte['id'] ?>"><button class="btn-rights" >Modifier</button></a>
+                            <a class="wrapper" href="?action=modifierProduit&idproduit=<?php echo $item['id'] ?>"><button class="btn-rights" >Modifier</button></a>
                         </td>
                         <td>
-                        <a class="wrapper" href="?action=suprimerCompte&idClient=<?php echo $compte['id'] ?>" >
+                        <a class="wrapper" href="?action=suprimerProduit&idproduit=<?php echo $item['id'] ?>" >
                             <button class="btn-rights btn-delete-account" >Supprimer</button>
                         </a>
                         </td>
