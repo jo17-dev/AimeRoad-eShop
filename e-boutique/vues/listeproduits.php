@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page de magasinage</title>
-    <link rel="stylesheet" href="../css/listeproduits.css">
+    <link rel="stylesheet" href="css/listeproduits.css">
 </head>
 <body>
    <!--Barre de navigation sur toutes les pages-->
-    <?php include_once("includes/header.php")?>
+    <?php include_once("vues/includes/header.php")?>
  
     <!-- Titre de la page en plus de la barre de recherche avec un filtres(...specifications a add plus tard pour rendre plus intérésent cateégories etc) -->
     <h1>Notre Collection d'articles Emeraudes</h1>
@@ -161,6 +161,6 @@
         que vous allez certainement aimer!</p>
 </section>
 <!-- footer part -->
-    <?php include_once("includes/footer.php")?>
+    <?php include_once("vues/includes/footer.php")?>
 </body>
 </html>

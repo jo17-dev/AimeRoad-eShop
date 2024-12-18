@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include_once("includes/header.php")?>
+    <?php include_once("vues/includes/header.php")?>
     <!-- page de garde haha -->
     <header>
         <div class="left-part">
@@ -52,7 +52,7 @@
         </div>
     </section>
     <!-- section des contacts -->
-    <h1 class="section-title">À propos: <span class="section-title-line"></span></h1>
+    <h1 class="section-title" id="a_propos">À propos: <span class="section-title-line"></span></h1>
     <section class="section about-section">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur natus reiciendis cum veritatis, est aliquid, nemo temporibus tempore, ipsum adipisci totam explicabo eveniet at? Exercitationem nemo iusto numquam tempora debitis.
         Blanditiis quae dolores reprehenderit laborum doloremconsequatur quas aliquam quia similique sed velit voluptates illo neque expedita nihil non fugiat fuga sequi assumenda dolorum, facilis excepturi, nemo perspiciatis ab! Harum!
@@ -61,6 +61,6 @@
         Eaque sit aspernatur id asperiores, deserunt autem ipsa alias, doloremque ratione odit nemo aut amet nesciunt velit ipsam assumenda reiciendis ex voluptas iure. Possimus, ipsam eos omnis quaerat incidunt vero.</p>
     </section>
     <!-- footer part -->
-    <?php include_once("includes/footer.php")?>
+    <?php include_once("vues/includes/footer.php")?>
 </body>
 </html>

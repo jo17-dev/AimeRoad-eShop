@@ -16,7 +16,10 @@ class SupprimerDroitsAdmin extends Controleur {
                 if(!$result){
                     // l'operation a échoué
                 }else{
-                    $_SESSION['utilisateurConnecte']['estAdmin'] = false;
+                    // si le client dont il supprimer les droit est le client actuel, on l'update aussi dans la session
+                    if((int) $_GET['idClient'] == $_SESSION['utilisateurConnecte']['id']){
+                        $_SESSION['utilisateurConnecte']['estAdmin'] = false;
+                    }
                 }
             }else{
                 // erreur de traitement ahahaha
