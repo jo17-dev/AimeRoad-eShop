@@ -7,8 +7,8 @@
         <img src="img/logo-320x60.png" class="logo" alt="Aimeroad">
         <ul class="links">
             <li><a href="?action=voirAcceuil">Accueil</a></li>
-            <li><a href="?action=voirAccueil#a_propos">À propos</a></li>
-            <li><a href="mailto:620022crosemont.qc.ca">Contact</a></li>
+            <li><a href="?action=voirAcceuil#a_propos">À propos</a></li>
+            <li><a href="mailto:6200224crosemont.qc.ca">Contact</a></li>
         </ul>
         <ul class="user-panel">
             <li>

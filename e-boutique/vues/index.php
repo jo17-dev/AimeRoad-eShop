@@ -52,7 +52,7 @@
         </div>
     </section>
     <!-- section des contacts -->
-    <h1 class="section-title">À propos: <span class="section-title-line"></span></h1>
+    <h1 class="section-title" id="a_propos">À propos: <span class="section-title-line"></span></h1>
     <section class="section about-section">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur natus reiciendis cum veritatis, est aliquid, nemo temporibus tempore, ipsum adipisci totam explicabo eveniet at? Exercitationem nemo iusto numquam tempora debitis.
         Blanditiis quae dolores reprehenderit laborum doloremconsequatur quas aliquam quia similique sed velit voluptates illo neque expedita nihil non fugiat fuga sequi assumenda dolorum, facilis excepturi, nemo perspiciatis ab! Harum!
