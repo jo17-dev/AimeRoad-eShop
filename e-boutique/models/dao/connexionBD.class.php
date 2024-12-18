@@ -1,6 +1,6 @@
 <?php
 
-include_once("config/configDB.php");
+include_once("models/dao/config/configDB.php");
 
 
 // ********* Classe englobante de PDO *************
