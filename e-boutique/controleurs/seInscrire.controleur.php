@@ -21,10 +21,13 @@
                     ClientDAO::inserer($_POST['nom'], $_POST['prenom'], $_POST['adresse'], $hash_password);
 
                     $unClient = ClientDAO::chercherParEmail($_POST['adresse']);
+                    $unClient['estAdmin']=false;
 
                     $unClient['estAdmin']=false;
 
                     $_SESSION['utilisateurConnecte'] = $unClient;
+
+                    
 
                     return "compte_client";
                 }

@@ -3,40 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/ajouter_produit_admin.css">
+    <link rel="stylesheet" href="css/ajouter_produit_admin.css">
+    <link rel="stylesheet" href="css/compte.css">
+    <link rel="stylesheet" href="css/popup.css">
     <title>Aimeroad</title>
 </head>
 <body>
-    <nav class="nav-bar">
-        <img src="../img/logo-320x60.png" class="logo" alt="Aimeroad">
-        <ul class="links">
-            <li><a href="../index.html">Accueil</a></li>
-            <li><a href="">À propos</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-        <ul class="user-panel">
-            <li>
-                <a href="./pages/connexion.php" title="click to view your cart"><img src="../img/panier-320x320.png" alt="login"></a>
-            </li>
-            <li>
-                <a href="./pages/connexion.php" title="click to login or connect"><img src="../img/compte-320x320.png" alt="login"></a>
-            </li>
-        </ul>
-    </nav>
-    <div id="container">
-        <h1>Formulaire de création de produit</h1>
-        <form action="?action=creerProduit" method="post">
+    <?php include_once("vues/includes/header.php")?>
+    <section class="main-container">
+        <!-- nav bar here -->
+        <?php include_once("vues/includes/admin_side_nav.include.php") ?>
+        <div class="user-info">
+            <h1>Formulaire de creation de produits</h1>
+            <form action="?action=creerProduit" method="post">
             <div>
                 <label for="nom">Nom:</label>
                 <input type="text" name="nom" id="nom" required>
             </div>
             <div>
-                <label for="prix">Prix unitaire (en USD): </label>
-                <input type="number" name="prix" id="prix" required>
+                <label for="prixUnitaire">Prix unitaire (en USD): </label>
+                <input type="number" name="prixUnitaire" id="prix" required>
             </div>            
             <div>
                 <label for="quantitee">Quantitée </label>
-                <input type="number" name="quantitee" id="quantitee" required>
+                <input type="number" name="quantite" id="quantitee" required>
             </div>
             <div>
                 <label for="photo">Importez une photo<span class="green-text"><small>(*jpg ou png)</small></span> </label>
@@ -45,59 +35,20 @@
             <div>
                 <label for="categorie">Categorie</label>
                 <select name="categorie" id="categorie" required>
-                    <option value="chaussures">Chaussures</option>
-                    <option value="bijoux">Bijoux</option>
-                    <option value="manteaux">Manteaux</option>
-                    <option value="chapeaux">Chapeaux</option>
+                    <option value="4">Chaussures</option>
+                    <option value="1">Bijoux</option>
+                    <option value="3">Manteaux</option>
+                    <option value="2">Chapeaux</option>
                 </select>
             </div>
             <div>
-                <label for="couleurs">Couleures disponibles</label>
-                <div>
-                    <input class="checkbox" type="checkbox" name="couleurs">Verte</input>
-                </div>
-                <div>
-                    <input class="checkbox" type="checkbox" name="couleurs">Bleue</input>
-                </div>
-                <div>
-                    <input class="checkbox" type="checkbox" name="couleurs">Rouge</input>
-                </div>
-                <div>
-                    <input class="checkbox" type="checkbox" name="couleurs">Jaune</input>
-                </div>
-                <input type="text" name="couleurs">couleurs personnalisées <small><span class="green-text">*séparer les couleures par les virgules</span></small></input>
             </div>
             <div>
                 <button type="submit">Creer</button>
             </div>
         </form>
-    </div>
-        <!-- footer part -->
-        <footer>
-            <div class="footer-contact-info">
-                <div>
-                    <img src="../img/logo-320x60.png" alt="AimeRoad">
-                    <p>Aimeroad</p>
-                    <p>Articles de marque</p>
-    
-                </div>
-                <div>
-                    <h4>Développeurs(e)s</h4>
-                    <p>Joël</p>
-                    <p>Daryl</p>
-                    <p>Sami</p>
-                    <p>Aymane</p>
-                    <p><a href="mailto:620022crosemont.qc.ca">préocupations</a></p>
-                </div>
-                <div>
-                    <h4>Service à la clientèlle</h4>
-                    <p>Nous sommes disponibles tous les jours, H-24</p>
-                    <address>support@aimeroad.com</address>
-                </div>
-            </div>
-            <div>
-                <p>Copyright 2024. projet de classe</p>
-            </div>
-        </footer>
+        </div>
+    </section>
+    <script src="js/popup.module.js"></script>
 </body>
 </html>

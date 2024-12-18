@@ -3,7 +3,7 @@
 include_once "models/dao/clientDAO.class.php";
 include_once "models/administrateur.class.php";
 
-class VoirAdmin extends Controleur{
+class VoirAjouterProduit extends Controleur{
     private Administrateur $admin;
     private string $vue; // vas contenir la vue qui seras renvoyer àl'execution de l'ation
     public function __construct(){
@@ -20,7 +20,7 @@ class VoirAdmin extends Controleur{
         // TODO bloc à décommenter
         if(isset($_SESSION['utilisateurConnecte'])){
             if($_SESSION['utilisateurConnecte']['estAdmin'] == true){
-                $this->vue = "compte_admin";
+                $this->vue = "ajouter_produit_admin";
             }else if($_SESSION['utilisateurConnecte']['estAdmin'] == false){
                 $this->vue = "compte_client";
             }

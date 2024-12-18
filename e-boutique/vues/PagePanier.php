@@ -1,3 +1,19 @@
+<?php
+
+include_once"../controleurs/PanierControleur.php";
+
+$panierControleur = new PanierControleur();
+
+
+$produitsPanier = $panierControleur->getProduitsPanier();
+
+
+$total = 0;
+foreach ($produitsPanier as $produit) {
+    $total += $produit['prix'] * $produit['quantite'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,72 +52,51 @@
         <th>Quantité</th>
         <th>Sous-total</th>
      </tr>
+     <?php foreach ($produitsPanier as $produit): ?>
+     
      <tr>
         <td>
             <div class="pro">
-                <img src="/e-boutique/img/chaussure.jpeg" alt="chaussure">
+                <img src= "<?php echo htmlspecialchars($produit['image']); ?>" alt="<?php echo htmlspecialchars($produit['nom']); ?>">
                 <div>
-                    <p>Chaussures vertes</p>
-                    <small>Prix: $70.00</small> </BR>
-                    <a href="supprimer ">RETIRER</a>
+                    <p><?php echo htmlspecialchars($produit['nom']); ?></p>
+                    <small>Prix: $<?php echo number_format($produit['prix'], 2); ?></small> </BR>
+                    <a href="supprimer.php?id=<?php echo $produit['id']; ?>">RETIRER</a>
                 </div>
              </div>
         </td>
-        <td><input type="number" value = "1"></td>
-        <td>$70.00</td>
+        <td><input type="number" value = "<?php echo htmlspecialchars($produit['quantite']); ?>" min="1">></td>
+        <td>$<?php echo number_format($produit['prix'] * $produit['quantite'], 2); ?></td>
      </tr>
- 
-     <tr>
-        <td>
-            <div class="pro">
-                <img src="/e-boutique/img/ring.jpeg" alt="Bague">
-                <div>
-                    <p>Bague vertes</p>
-                    <small>Prix: $20.00</small> </BR>
-                    <a href="supprimer">RETIRER</a>
-                </div>
-             </div>
-        </td>
-        <td><input type="number" value = "1"></td>
-        <td>$20.00</td>
-     </tr>
- 
-     <tr>
-        <td>
-            <div class="pro">
-                <img src="/e-boutique/img/cap.jpeg" alt="Casquette">
-                <div>
-                    <p>Casquette verte</p>
-                    <small>Price: $15.00</small> </BR>
-                    <a href="supprimer">RETIRER</a>
-                </div>
-             </div>
-        </td>
-        <td><input type="number" value = "1"></td>
-        <td>$15.00</td>
-     </tr>
-    </table>
+     <?php endforeach; ?>
+     </table>
+
+
+    
  
     <div class="totale">
         <table>
             <tr>
                 <td>Sous-total</td>
-                <td>$105.00</td>
+                <td>$<?php echo number_format($total, 2); ?></td>
             </tr>
             <tr>
-                <td>Tax</td>
-                <td>$15.75</td>
+                <td>Taxe (15%)</td>
+                <td>$<?php echo number_format($total * 0.15, 2); ?></td>
             </tr>
             <tr>
                 <td>Total</td>
-                <td>$120.75</td>
+                <td>$<?php echo number_format($total * 1.15, 2); ?></td>
             </tr>
         </table>
+
+        
     </div>
- 
+    <a href="PagePaiement.php" class="btn-payer-link">
+        <button class="btn-payer">Payer</button>
+    </a>
   </div>
   </div>
- 
  
  
 <!-- footer part -->
@@ -134,4 +129,3 @@
  
 </body>
 </html>
- 

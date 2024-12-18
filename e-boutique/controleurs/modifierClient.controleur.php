@@ -3,26 +3,14 @@
 include_once "models/dao/clientDAO.class.php";
 include_once "models/administrateur.class.php";
 
-class ModifierAdmin extends Controleur{
-    private Administrateur $admin;
+class ModifierClient extends Controleur{
+    private Administrateur $admin; // à date on utilise Admin car client ne fonctionne pas encore...
     public function __construct(){
         parent::__construct();
         session_status() == PHP_SESSION_ACTIVE ? "" : session_start();
-
-        //TODO: enlever ce block
         $row = $_SESSION['utilisateurConnecte'];
+
         $this->admin = new Administrateur($row['id'], $row['nom'], $row['prenom'], $row['email'], $row['password']);
-
-        // fin du bloc à enlever
-
-        // TODO bloc à décommenter
-        // if(isset($_SESSION['user']['estAdmin'])){
-            // $this->utilisateur = new Administrateur($_SESSION['user']['id'], $_SESSION['user']['nom'], $_SESSION['user']['prenom'], $_SESSION['user']['email'], $_SESSION['user']['hashed_password']);
-        // }else if(isset($_SESSION['user']['estAdmin'])){
-        //     return "compte_client";
-        // }
-
-        
     }
 
     public function executerAction(): string {
@@ -56,7 +44,7 @@ class ModifierAdmin extends Controleur{
             }
         }
 
-        return "compte_admin";
+        return "compte_client";
     }
 
     public function getAdministrateur(): Administrateur{

@@ -15,6 +15,16 @@ include_once "voirInscription.controleur.php";
 include_once "voirListeClient.controleur.php";
 include_once "ajouterDroitsAdmin.controleur.php";
 include_once "supprimerClient.controleur.php";
+include_once "suprimerDroitsAdmin.controleur.php";
+include_once "suprimerCompte.controleur.php";
+include_once "modifierClient.controleur.php";
+include_once "voirListeProduits.controleur.php";
+include_once "voirAjouterProduit.controleur.php";
+include_once "creerProduit.controleur.php";
+include_once "supprimerProduit.controleur.php";
+
+include_once "voirListeProduits.controleur.php";
+
 class ControleurManifacture {
     /**
      * Dans cette methode, on fait les traintements par le controleur et on renvoie la vue à charger
@@ -33,6 +43,10 @@ class ControleurManifacture {
             return new VoirListeClient();
         }elseif($action == "ajouterDroitsAdmin"){
             return new AjouterDroitsAdmin();
+        }elseif($action == "surprimerDroitsAdmin"){
+            return new SupprimerDroitsAdmin();
+        }elseif($action == "suprimerCompte"){
+            return new SuprimerCompte();
         }elseif($action == ""){
                 
         }
@@ -54,7 +68,20 @@ class ControleurManifacture {
             return new VoirAcceuil();
         }elseif($action == "supprimerClient") {
             return new SupprimerClient();
+        }elseif($action == "modifierClient"){
+            return new ModifierClient();
+        }elseif($action == "modifierClient"){
+            return new ModifierClient();
+         }elseif($action == "voirListeProduits") {
+            return new VoirProduit();
+        }elseif($action == "voirAjouterProduit"){
+            return new VoirAjouterProduit();
+        }elseif($action == "creerProduit"){
+            return new CreerProduit();
+        }elseif($action == "suprimerProduit"){
+            return new SupprimerProduit();
         }
     }
 }
+    
 ?>
