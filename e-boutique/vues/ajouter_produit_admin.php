@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/ajouter_produit_admin.css">
-    <link rel="stylesheet" href="css/compte.css">
-    <link rel="stylesheet" href="css/popup.css">
     <title>Aimeroad</title>
 </head>
 <body>
     <?php include_once("vues/includes/header.php")?>
-    <section class="main-container">
-        <!-- nav bar here -->
-        <?php include_once("vues/includes/admin_side_nav.include.php") ?>
-        <div class="user-info">
-            <h1>Formulaire de creation de produits</h1>
-            <form action="?action=creerProduit" method="post">
+    <div id="container">
+        <h1>Formulaire de création de produits</h1>
+        <form action="?action=creerProduit" method="post">
             <div>
                 <label for="nom">Nom:</label>
                 <input type="text" name="nom" id="nom" required>
@@ -47,8 +42,6 @@
                 <button type="submit">Creer</button>
             </div>
         </form>
-        </div>
-    </section>
-    <script src="js/popup.module.js"></script>
+    </div>
 </body>
 </html>

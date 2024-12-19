@@ -67,9 +67,7 @@ class ControleurManifacture {
             return new VoirAcceuil();
         }elseif($action == "modifierClient"){
             return new ModifierClient();
-        }elseif($action == "modifierClient"){
-            return new ModifierClient();
-         }elseif($action == "voirListeProduits") {
+        }elseif($action == "voirListeProduits") {
             return new VoirProduit();
         }elseif($action == "voirAjouterProduit"){
             return new VoirAjouterProduit();
