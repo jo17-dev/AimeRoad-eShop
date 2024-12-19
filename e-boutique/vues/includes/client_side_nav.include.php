@@ -1,4 +1,5 @@
 <div class="aside-nav">
+    <button id="toggle-side-bar" class="toggle-side-bar">réduire</button>
     <h5 class="section-title">Gestion des identifants</h5>
     <ul class="item-container">
         <li class="item-list" onclick="afficherPopUpUser('nom')"><a href="#">Modifier mon nom</a></li>
@@ -18,3 +19,4 @@
         <li class="item-list"><a href="">Supprimer le compte</a></li>
     </ul>
 </div>
+<script src="js/toggle_side_nav.js"></script>
