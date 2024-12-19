@@ -21,6 +21,8 @@ include_once "voirListeProduits.controleur.php";
 include_once "voirAjouterProduit.controleur.php";
 include_once "creerProduit.controleur.php";
 include_once "supprimerProduit.controleur.php";
+include_once "PanierControleur.php";
+include_once "PaiementControleur.php";
 
 include_once "voirListeProduits.controleur.php";
 
@@ -75,6 +77,13 @@ class ControleurManifacture {
             return new CreerProduit();
         }elseif($action == "suprimerProduit"){
             return new SupprimerProduit();
+        }else if($action == "ajouterPanier"){
+            return new PanierControleur();
+        }else if($action == "pagePaiement"){
+            return new PaiementControleur();
+        }
+        else{
+            return new VoirAcceuil();
         }
     }
 }

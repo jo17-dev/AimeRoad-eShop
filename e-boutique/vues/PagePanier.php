@@ -1,6 +1,6 @@
 <?php
 
-include_once"../controleurs/PanierControleur.php";
+include_once "controleurs/PanierControleur.php";
 
 $panierControleur = new PanierControleur();
 
@@ -20,28 +20,13 @@ foreach ($produitsPanier as $produit) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/PagePanier.css">
+    <link rel="stylesheet" href="css/PagePanier.css">
  
 </head>
 <body>
  
     <!--Barre de navigation sur toutes les pages-->
-    <nav class="nav-bar">
-        <img src="../img/logo-320x60.png" class="logo" alt="Aimeroad">
-        <ul class="links">
-            <li><a href="">Accueil</a></li>
-            <li><a href="">À propos</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-        <ul class="user-panel">
-            <li>
-                <a href="./pages/connexion.php" title="click to view your cart"><img src="../img/panier-320x320.png" alt="login"></a>
-            </li>
-            <li>
-                <a href="./pages/connexion.php" title="click to login or connect"><img src="../img/compte-320x320.png" alt="login"></a>
-            </li>
-        </ul>
-    </nav>
+<?php include_once("vues/includes/header.php"); ?>
  
  
 <div class="container-wrapper">
@@ -92,7 +77,7 @@ foreach ($produitsPanier as $produit) {
 
         
     </div>
-    <a href="PagePaiement.php" class="btn-payer-link">
+    <a href="?action=pagePaiement" class="btn-payer-link">
         <button class="btn-payer">Payer</button>
     </a>
   </div>

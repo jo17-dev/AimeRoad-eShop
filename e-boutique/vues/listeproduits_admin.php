@@ -54,7 +54,6 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
                         if(count($controleur->getTabProduits()) == 0){
                             echo "<tr><td colspan='5' class='no-datas-warning'>Aucune donnée disponible pour cet affichage</td></tr>";
                         }else{
-                            // var_dump($controleur->getTabProduits());
                             foreach($controleur->getTabProduits() as $item){
                     ?>
                     <tr>

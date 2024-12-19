@@ -25,6 +25,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/ajouter_produit_admin.css">
     <link rel="stylesheet" href="css/compte.css">
+    <link rel="stylesheet" href="css/popup.css">
     <title>Aimeroad</title>
 </head>
 <body>
@@ -69,5 +70,6 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
             </div>
         </div>
     </section>
+    <script src="js/popup.module.js"></script>
 </body>
 </html>
