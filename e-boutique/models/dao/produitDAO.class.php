@@ -2,6 +2,7 @@
  
 include_once("connexionBD.class.php");
 include_once("dao.interface.php");
+include_once("models/produit.class.php");
  
  
 class ProduitDAO implements DAO {
@@ -112,18 +113,21 @@ class ProduitDAO implements DAO {
         } catch (Exception $e) {
             throw new Exception("Impossible d’obtenir la connexion à la BD.");
         }
-        $commande = $connexion->query("SELECT produit.id, produit.nom, categorie.nom 'categorie', prixUnitaire, quantite
+        $commande = $connexion->query("SELECT produit.id, produit.nom, produit.urlPhoto ,categorie.nom 'categorie', prixUnitaire, quantite
                                          FROM produit INNER JOIN categorie ON produit.idCategorie = categorie.id ORDER BY produit.date_modification DESC");
  
         $rows = $commande->fetchAll();
- 
-        ConnexionBD::close();
- 
-        return $rows;
+
+        $result = [];
+
+        foreach($rows as $valeur){
+            array_push($result, new Produit($valeur['id'], $valeur['categorie'], $valeur['nom'], $valeur['prixUnitaire'], $valeur['quantite'], $valeur['urlPhoto']));
+        }
+
+        return $result;
+
     }
-   
+
 }
- 
- 
  
 ?>

@@ -4,16 +4,16 @@
  class Produit {
     // Propriétés de la classe
     private int $id;
-    private string $idCategorie;
+    private string $categorie;
     private string $nom;
     private float $prixUnitaire;
     private int $quantite;
     private string $urlPhoto;
 
     // Constructeur avec tous les paramètres
-    public function __construct(int $id, string $idCategorie,string $nom, float $prixUnitaire,int $quantite, string $urlPhoto) {
+    public function __construct(int $id, string $categorie,string $nom, float $prixUnitaire,int $quantite, string $urlPhoto) {
         $this->id = $id;
-        $this->idCategorie = $idCategorie;
+        $this->categorie = $categorie;
         $this->nom = $nom;
         $this->prixUnitaire = $prixUnitaire;
         $this->quantite = $quantite;
@@ -25,8 +25,8 @@
         return $this->id;
     }
 
-    public function getIdCategorie(): string {
-        return $this->idCategorie;
+    public function getCategorie(): string {
+        return $this->categorie;
     }
 
     
