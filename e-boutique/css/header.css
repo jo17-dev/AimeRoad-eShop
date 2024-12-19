@@ -82,7 +82,7 @@
 
 /* mobile version::: */
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 650px) {
     .nav-bar{
         flex-direction: column;
         /* height: 80px;     */
