@@ -30,14 +30,16 @@
 
                     return $unClient['estAdmin']? "compte_admin": "compte_client";
                 } else {
-                    /* Lorsque que la connexion échoue, un cookie est créé pour notifier la page connexion et afficher
+                    /* Lorsque que la connexion échoue, une session est créé pour notifier la page connexion et afficher
                     un message, elle est automatiquement détruite après
-                    */ 
-                    setcookie('connexionFailure',  true, time() + 100);
+                    */
+                    session_start();
+                    $_SESSION['loginFailure'] = true;
                     return "connexion";
                 }
             } else {
-                setcookie('connexionFailure',  true, time() + 100);
+                session_start();
+                $_SESSION['loginFailure'] = true;
                 return "connexion";
             }
             

@@ -12,6 +12,8 @@
         {
             if (isset($_POST['nom']) and isset($_POST['prenom']) and isset($_POST['adresse']) and isset($_POST['mdp'])) {
                 if(!empty(ClientDAO::chercherParEmail($_POST['adresse'])['email']) or (strlen($_POST['mdp']) < 5)) {
+                    session_start();
+                    $_SESSION['signupFailure'] = true;
                     return "inscription";
                 } else {
                     error_reporting(E_ALL ^ E_DEPRECATED);

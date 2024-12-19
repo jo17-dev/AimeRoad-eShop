@@ -8,14 +8,15 @@
 </head>
 <body>
     <?php
-    if ($_COOKIE['connexionFailure']) {
+    if ($_SESSION['loginFailure']) {
         echo "<script>alert('Les informations inscrites sont incorrectes, veuillez réessayer')</script>";
-        $_COOKIE['connexionFailure'] = false;
+        session_destroy();
     }
     ?>
 
+    <?php include_once("vues/includes/header.php")?>
+    
     <div class="logo">
-    <a href="?action=voirAcceuil"><img src="img/logo-320x60.png" alt=""></a>
     </div>
 
     <div class="texte">
@@ -53,12 +54,12 @@
         </div>
 
         <div class="info">
-        <a href="?action=voirInscription" title="Créer un nouveau compte AimeRoad">S'inscrire</a><br>
+        <a href="?action=voirInscription" title="Créer un nouveau compte AimeRoad" id="LienInscription">S'inscrire</a><br>
         </div>
 
     </form>
     <div></div>
     </div>
-
+    <?php include_once("vues/includes/footer.php")?>
 </body>
 </html>

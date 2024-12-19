@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/footer.css">
 <footer>
     <div class="footer-contact-info">
         <div>

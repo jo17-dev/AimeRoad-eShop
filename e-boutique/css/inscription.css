@@ -4,16 +4,8 @@ html {
     background-color: var(--vert-sombre);
 }
 
-.logo {
-    text-align: center;
-    margin-top: 5%;
-    font-size: large;
-}
-
-.logo > img {
-    width: 35%;
-    height: 35%;
-    image-rendering: crisp-edges;
+.links {
+    padding-right: 110px;
 }
 
 .texte {
@@ -31,14 +23,18 @@ html {
 }
 
 .infos > form {
-    border: 5px solid var(--blanc-clair);
-    background-color: var(--gris);
+    border: 5px solid var(--vert-clair);
     margin-top: 20%;
 }
 
 .info {
     font-size: 150%;
     margin: 30px;
+}
+
+#LienConnexion {
+    background-color: var(--vert-clair);
+    border-radius: 5px;
 }
 
 button {
