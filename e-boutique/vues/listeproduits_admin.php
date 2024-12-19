@@ -43,6 +43,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
             <table>
                 <thead>
                     <td>code</td>
+                    <td>Nom</td>
                     <td>categorie</td>
                     <td>prix unitaire </td>
                     <td>Quantitée disponible</td>
@@ -58,6 +59,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
                     <tr>
                         <td> <?php echo $item['id'] ?> </td>
                         <td><?php echo $item['nom'] ?></td>
+                        <td><?php echo $item['categorie'] ?></td>
                         <td><?php echo $item['prixUnitaire'] . "$" ?></td>
                         <td><?php echo $item['quantite'] ?></td>
                         <td>

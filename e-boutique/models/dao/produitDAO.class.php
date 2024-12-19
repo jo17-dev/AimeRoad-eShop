@@ -112,7 +112,8 @@ class ProduitDAO implements DAO {
         } catch (Exception $e) {
             throw new Exception("Impossible d’obtenir la connexion à la BD.");
         }
-        $commande = $connexion->query("SELECT * FROM produit");
+        $commande = $connexion->query("SELECT produit.id, produit.nom, categorie.nom 'categorie', prixUnitaire, quantite
+                                         FROM produit INNER JOIN categorie ON produit.idCategorie = categorie.id ORDER BY produit.date_modification DESC");
  
         $rows = $commande->fetchAll();
  

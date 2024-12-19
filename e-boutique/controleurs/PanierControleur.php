@@ -1,8 +1,9 @@
 <?php
-include '../dao/PanierDAO.php';
+include 'models/dao/PanierDAO.php';
 
-class PanierControleur {
+class PanierControleur extends Controleur {
     private $panierDAO;
+    private $vue = "PagePanier";
 
     // Constructeur pour initialiser le DAO
     public function __construct() {
@@ -11,7 +12,14 @@ class PanierControleur {
 
     // Récupérer les produits du panier
     public function getProduitsPanier() {
-        return $this->panierDAO->getProduits();
+        if(isset($_SESSION['utilisateurConnecte']['id'])){
+
+            return $this->panierDAO->getProduits($_SESSION['utilisateurConnecte']['id']);
+            $this->vue = "PagePanier";
+        }else{
+            $this->vue = "connexion";
+            return [];
+        }
     }
 
     // Ajouter un produit au panier
@@ -39,6 +47,10 @@ class PanierControleur {
     // Vider complètement le panier
     public function viderPanier() {
         $this->panierDAO->viderPanier();
+    }
+
+    public function executerAction(): string{
+        return $this->vue;
     }
 }
 ?>

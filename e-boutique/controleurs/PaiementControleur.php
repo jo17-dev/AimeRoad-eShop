@@ -1,7 +1,7 @@
 <?php
-include '../dao/PaiementDAO.php';
+include 'models/dao/PaiementDAO.php';
 
-class PaiementControleur {
+class PaiementControleur extends Controleur {
     private $paiementDAO;
 
     public function __construct() {
@@ -26,6 +26,10 @@ class PaiementControleur {
 
         // Enregistrer le paiement
         $this->paiementDAO->enregistrerPaiement($data);
+    }
+
+    public function executerAction(): string{
+        return "PagePaiement";
     }
 }
 ?>

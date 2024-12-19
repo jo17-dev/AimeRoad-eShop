@@ -123,6 +123,10 @@ h1 { /* Notre Collection ... */
     text-align: left;
 }
  
+.btn-content{
+    text-decoration: none;
+    color: inherit;
+}
 
  
  

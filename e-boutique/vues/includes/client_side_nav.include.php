@@ -9,7 +9,7 @@
 
     <h5 class="section-title">Aller vers...</h5>
     <ul class="item-container">
-        <li class="item-list"><a href="?action=voirListeProduit">Liste des produits</a></li>
+        <li class="item-list"><a href="?action=voirListeProduits">Liste des produits</a></li>
     </ul>
 
     <h5 class="section-title">Autre</h5>

@@ -1,5 +1,5 @@
 <?php
-include("connexionBD.class.php");
+include_once("connexionBD.class.php");
 
 class PanierDAO implements DAO {
     public static function chercher(mixed $cles): ?object{
@@ -7,15 +7,22 @@ class PanierDAO implements DAO {
     }
     private $connexion;
     
-    public function getProduits() {
+    public function getProduits(int $id): array{
+        $this->connexion = ConnexionBD::getInstance();
         try {
             $requete = $this->connexion->prepare("
-                SELECT panier.id, produits.nom, produits.image, produits.prix, panier.quantite
+                SELECT panier.quantite, produit.nom, produit.prixUnitaire
                 FROM panier
-                INNER JOIN produits ON panier.produit_id = produits.id
+                INNER JOIN produit ON panier.idProduit = produit.id AND panier.idClient = $id
             ");
             $requete->execute();
-            return $requete->fetchAll(PDO::FETCH_ASSOC);
+
+            $result = $requete->fetchAll();
+            if($result == null){
+                return [];
+            }else{
+                return $result;
+            }
         } catch (PDOException $e) {
             die("Erreur lors de la récupération des produits : " . $e->getMessage());
         }
