@@ -25,32 +25,20 @@
  
     <!-- Section des produits avec leurs div (les grilles (grids))-->
     <div class="products-section">
-        <?php for($i=0; $i< 15; $i++){ ?>
+
                 <!-- Produits lignes 1-3(A repeter 3 fois car je veux 3 fois sur une rangee de 5 produits(3 produits par lignes/5 produits par rangees)) -->
             <div class="products-grid">
+            <?php foreach($controleur->getTabProduits() as $produit){ ?>
                 <div class="boite_produit">
-                    <img src="img/produit-demo.jpg" title="image produit" alt="image du produit" class="img-produits" >
-                    <h2 class="titre_du_produit">Produit 1</h2>
+                    <img src="<?php echo $produit->getUrlPhoto(); ?>" title="image produit" alt="image du produit" class="img-produits" >
+                    <h2 class="titre_du_produit"> <?php echo $produit->getNom() ?> </h2>
                     <p class="description-du-produit">Description du produit 1.</p>
-                    <div class="prix-produit">29.99$</div>
+                    <div class="prix-produit"> <?php echo $produit->getPrixUnitaire() . "$" ?>  </div>
                     <button class="boutton-add-panier"> <a class="btn-content" href="?action=ajouterPanier">Ajouter au panier</a> </button>
                 </div>
-                <div class="boite_produit">
-                    <img src="img/produit-demo.jpg" title="image produit" alt="image du produit" class="img-produits" >
-                    <h2 class="titre_du_produit">Produit 2</h2>
-                    <p class="description-du-produit">Description du produit 2.</p>
-                    <div class="prix-produit">39.99$</div>
-                    <button class="boutton-add-panier"> <a class="btn-content" href="?action=ajouterPanier">Ajouter au panier</a> </button>
-                </div>
-                <div class="boite_produit">
-                    <img src="img/produit-demo.jpg" title="image produit" alt="image du produit" class="img-produits" >
-                    <h2 class="titre_du_produit">Produit 3</h2>
-                    <p class="description-du-produit">Description du produit 3.</p>
-                    <div class="prix-produit">49.99$</div>
-                    <button class="boutton-add-panier"> <a class="btn-content" href="?action=ajouterPanier">Ajouter au panier</a> </button>
-                </div>
+            <?php } ?>
             </div>
-        <?php } ?>
+
     </div>
 </section>
 <section class="section about-section">

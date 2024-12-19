@@ -45,10 +45,10 @@ class ProduitDAO implements DAO {
         return $row;
     }
  
-    public static function chercherParNom(int $chercherParNom): array {
+    public static function chercherParNom(string $chercherParNom): array {
         $connexion =  ConnexionBD::getInstance();
  
-        $statement = $connexion->prepare("SELECT * FROM produit WHERE nom=$chercherParNom");
+        $statement = $connexion->prepare("SELECT * FROM produit WHERE nom='$chercherParNom'");
         $statement->execute();
  
         $row = $statement->fetchAll();

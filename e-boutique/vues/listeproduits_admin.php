@@ -57,16 +57,16 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
                             foreach($controleur->getTabProduits() as $item){
                     ?>
                     <tr>
-                        <td> <?php echo $item['id'] ?> </td>
-                        <td><?php echo $item['nom'] ?></td>
-                        <td><?php echo $item['categorie'] ?></td>
-                        <td><?php echo $item['prixUnitaire'] . "$" ?></td>
-                        <td><?php echo $item['quantite'] ?></td>
+                        <td> <?php echo $item->getId(); ?> </td>
+                        <td><?php echo $item->getNom(); ?></td>
+                        <td><?php echo $item->getCategorie(); ?></td>
+                        <td><?php echo $item->getPrixUnitaire() . "$" ?></td>
+                        <td><?php echo $item->getQuantite(); ?></td>
                         <td>
-                            <a class="wrapper" href="?action=modifierProduit&idproduit=<?php echo $item['id'] ?>"><button class="btn-rights" >Modifier</button></a>
+                            <a class="wrapper" href="?action=modifierProduit&idproduit=<?php echo $item->getId() ?>"><button class="btn-rights" >Modifier</button></a>
                         </td>
                         <td>
-                        <a class="wrapper" href="?action=suprimerProduit&idproduit=<?php echo $item['id'] ?>" >
+                        <a class="wrapper" href="?action=suprimerProduit&idproduit=<?php echo $item->getId() ?>" >
                             <button class="btn-rights btn-delete-account" >Supprimer</button>
                         </a>
                         </td>

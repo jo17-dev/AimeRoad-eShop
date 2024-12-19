@@ -5,6 +5,7 @@
  */
  abstract class Controleur {
     private string $userRole;
+    private static array $messagesErreur = [];
     public function __construct(){
         session_status() == PHP_SESSION_ACTIVE ? "" : session_start();
         $this->userRole = "visiteur";
@@ -26,7 +27,20 @@
         return $this->userRole;
     }
 
+    public static function ajouterMessageErreur(string $cible, bool $isError=true){
+        array_push(Controleur::$messagesErreur, $cible);
+    }
+
+    public static function suprimerMessages(){
+        Controleur::$messagesErreur = [];
+    }
+
+    public static function getMessagesErreur(): array{
+        return Controleur::$messagesErreur;
+    }
+
     public abstract function executerAction() :string;
+
 }
 
 ?>
