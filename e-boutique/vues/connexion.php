@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="css/connexion.css">
 </head>
 <body>
+    <?php
+    if ($_COOKIE['connexionFailure']) {
+        echo "<script>alert('Les informations inscrites sont incorrectes, veuillez réessayer')</script>";
+        $_COOKIE['connexionFailure'] = false;
+    }
+    ?>
 
     <div class="logo">
     <a href="?action=voirAcceuil"><img src="img/logo-320x60.png" alt=""></a>

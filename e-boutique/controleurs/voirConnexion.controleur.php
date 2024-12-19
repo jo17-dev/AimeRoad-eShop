@@ -7,6 +7,7 @@
             parent::__construct();
         }
         public function executerAction(): string {
+            $_COOKIE['connexionFailure'] = false;
             if(parent::getUtilisateur() == "client") {
                 return "compte_client";
             } elseif(parent::getUtilisateur() != "visiteur") {

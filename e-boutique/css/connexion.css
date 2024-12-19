@@ -32,7 +32,6 @@ html {
 
 .infos > form {
     border: 5px solid var(--blanc-clair);
-    background-color: var(--gris);
     margin-top: 20%;
 }
 
