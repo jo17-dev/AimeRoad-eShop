@@ -24,6 +24,7 @@ html {
 
 .infos > form {
     border: 5px solid var(--vert-clair);
+    border-radius: 5px;
     margin-top: 20%;
 }
 
@@ -33,8 +34,7 @@ html {
 }
 
 #LienInscription {
-    background-color: var(--vert-clair);
-    border-radius: 5px;
+    color: var(--blanc-clair);
 }
 
 button {
