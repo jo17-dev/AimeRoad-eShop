@@ -43,6 +43,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
             <table>
                 <thead>
                     <td>code</td>
+                    <td>Nom</td>
                     <td>categorie</td>
                     <td>prix unitaire </td>
                     <td>Quantitée disponible</td>
@@ -53,11 +54,13 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
                         if(count($controleur->getTabProduits()) == 0){
                             echo "<tr><td colspan='5' class='no-datas-warning'>Aucune donnée disponible pour cet affichage</td></tr>";
                         }else{
+                            // var_dump($controleur->getTabProduits());
                             foreach($controleur->getTabProduits() as $item){
                     ?>
                     <tr>
                         <td> <?php echo $item['id'] ?> </td>
                         <td><?php echo $item['nom'] ?></td>
+                        <td><?php echo $item['categorie'] ?></td>
                         <td><?php echo $item['prixUnitaire'] . "$" ?></td>
                         <td><?php echo $item['quantite'] ?></td>
                         <td>
