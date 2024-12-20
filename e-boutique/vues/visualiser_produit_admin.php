@@ -69,11 +69,11 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
                     </div>
                     <div>
                         <label for="categorie">Categorie</label>
-                        <select name="categorie" id="categorie" required>
-                            <option value="4">Chaussures</option>
-                            <option value="1">Bijoux</option>
-                            <option value="3">Manteaux</option>
-                            <option value="2">Chapeaux</option>
+                        <select name="categorie" id="categorie" value="2" required>
+                            <option value="4" <?php if( $controleur->getProduit()->getCategorie() == "Chaussures") echo 'selected' ?> >Chaussures</option>
+                            <option value="1"  <?php if( $controleur->getProduit()->getCategorie() == "Bijoux") echo 'selected' ?>>Bijoux</option>
+                            <option value="3"  <?php if( $controleur->getProduit()->getCategorie() == "Manteaux") echo 'selected' ?>>Manteaux</option>
+                            <option value="2"  <?php if( $controleur->getProduit()->getCategorie() == "Chapeaux") echo 'selected' ?>>Chapeaux</option>
                         </select>
                     </div>
                     <div>
