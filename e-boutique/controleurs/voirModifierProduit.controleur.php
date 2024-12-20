@@ -2,7 +2,7 @@
 //include_once "models/dao/clientDAO.class.php";
 include_once "models/produit.class.php";
 
-class ModifierProduit extends Controleur{
+class VoirModifierProduit extends Controleur{
 
 	public function __construct()
 	{

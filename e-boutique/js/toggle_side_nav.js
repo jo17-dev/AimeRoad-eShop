@@ -30,5 +30,9 @@ btnToogle.addEventListener('click', ()=>{
 // étant donnés qu'as la 
 window.onload = ()=>{
     console.log("page completement loadée");
-    btnToogle.click();
+
+    // la side bar s'affiche par defaut. si on est sur mobile, on la ferme par defaut au chargement de la page
+    if(document.body.offsetWidth <= 700){
+        btnToogle.click();
+    }
 }

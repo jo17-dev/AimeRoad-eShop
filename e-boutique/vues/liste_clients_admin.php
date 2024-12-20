@@ -37,45 +37,47 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
         <?php include_once("vues/includes/admin_side_nav.include.php") ?>
         <div class="user-info">
             <h1>Liste des clients.</h1>
-            <table>
-                <thead>
-                    <td>code</td>
-                    <td>Nom</td>
-                    <td>Prenom </td>
-                    <td>Email</td>
-                    <td colspan="2" >Actions</td>
-                </thead>
-                <tbody>
-                    <?php
-                        if(count($controleur->getListeClients()) == 0){
-                            echo "<tr><td colspan='5' class='no-datas-warning'>Aucune donnée disponible pour cet affichage</td></tr>";
-                        }else{
-                            foreach($controleur->getListeClients() as $compte){
-                    ?>
-                    <tr>
-                        <td> <?php echo $compte['id'] ?> </td>
-                        <td><?php echo $compte['nom'] ?></td>
-                        <td><?php echo $compte['prenom'] ?></td>
-                        <td><?php echo $compte['email'] ?></td>
-                        <td>
-                            <?php if(isset($compte['idClient'])){ // si le compte est un compte admin, on peux seuleument retirer ses droits?>
-                                <a class="wrapper" href="?action=surprimerDroitsAdmin&idClient=<?php echo $compte['id'] ?>"><button class="btn-rights btn-delete-account" >Suprimer les droits admin</button></a>
-                            <?php }else{ ?>
-                                <a class="wrapper" href="?action=ajouterDroitsAdmin&idClient=<?php echo $compte['id'] ?>" ><button class="btn-rights">Ajouter les droits admin</button></a>
-                            <?php } ?>
-                        </td>
-                        <td>
-                        <a class="wrapper" href="?action=suprimerCompte&idClient=<?php echo $compte['id'] ?>" >
-                            <button class="btn-rights btn-delete-account" >supprimer compte</button>
-                        </a>
-                        </td>
-                    </tr>
-                    <?php
+            <div class="content-wrapper">
+                <table>
+                    <thead>
+                        <td>code</td>
+                        <td>Nom</td>
+                        <td>Prenom </td>
+                        <td>Email</td>
+                        <td colspan="2" >Actions</td>
+                    </thead>
+                    <tbody>
+                        <?php
+                            if(count($controleur->getListeClients()) == 0){
+                                echo "<tr><td colspan='5' class='no-datas-warning'>Aucune donnée disponible pour cet affichage</td></tr>";
+                            }else{
+                                foreach($controleur->getListeClients() as $compte){
+                        ?>
+                        <tr>
+                            <td> <?php echo $compte['id'] ?> </td>
+                            <td><?php echo $compte['nom'] ?></td>
+                            <td><?php echo $compte['prenom'] ?></td>
+                            <td><?php echo $compte['email'] ?></td>
+                            <td>
+                                <?php if(isset($compte['idClient'])){ // si le compte est un compte admin, on peux seuleument retirer ses droits?>
+                                    <a class="wrapper" href="?action=surprimerDroitsAdmin&idClient=<?php echo $compte['id'] ?>"><button class="btn-rights btn-delete-account" >Suprimer les droits admin</button></a>
+                                <?php }else{ ?>
+                                    <a class="wrapper" href="?action=ajouterDroitsAdmin&idClient=<?php echo $compte['id'] ?>" ><button class="btn-rights">Ajouter les droits admin</button></a>
+                                <?php } ?>
+                            </td>
+                            <td>
+                            <a class="wrapper" href="?action=suprimerCompte&idClient=<?php echo $compte['id'] ?>" >
+                                <button class="btn-rights btn-delete-account" >supprimer compte</button>
+                            </a>
+                            </td>
+                        </tr>
+                        <?php
+                                }
                             }
-                        }
-                    ?>
-                </tbody>
-            </table>
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
     <script src="js/popup.module.js"></script>

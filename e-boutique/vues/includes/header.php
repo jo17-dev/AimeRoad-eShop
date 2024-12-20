@@ -15,3 +15,4 @@
         </li>
     </ul>
 </nav>
+<script src="js/scroll_nav_bar.js"></script>

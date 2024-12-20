@@ -21,4 +21,5 @@
         <li class="item-list"><a href="action=suprimerCompte&idClient=<?php echo $user->getId() ?>">Supprimer le compte</a></li>
     </ul>
 </div>
+<!-- ce n'est surement pas une bonne pratique d'inclure le js dans les inclusions comme ça.. -->
 <script src="js/toggle_side_nav.js"></script>
