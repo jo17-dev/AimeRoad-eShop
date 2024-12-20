@@ -13,11 +13,11 @@ class ProduitDAO implements DAO {
     public static function chercherParId(int $id): array {
         $connexion =  ConnexionBD::getInstance();
  
-        $statement = $connexion->prepare("SELECT * FROM produit WHERE id=$id");
+        $statement = $connexion->prepare("SELECT produit.*, categorie.nom 'cate' FROM produit INNER JOIN categorie ON produit.idCategorie = categorie.id WHERE produit.id=$id");
  
         $statement->execute();
  
-        $row = $statement->fetchAll();
+        $row = $statement->fetch();
  
         if($row == false){
             return [];

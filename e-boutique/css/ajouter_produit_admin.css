@@ -88,3 +88,13 @@ form > div:nth-child(7) > button:hover{
     list-style-type: none;
     color: var(--vert-clair);
 }
+
+button.error a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.image-visualizer{
+    width: 90%;
+    height: auto;
+}

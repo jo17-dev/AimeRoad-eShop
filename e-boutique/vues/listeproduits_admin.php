@@ -64,7 +64,7 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
                             <td><?php echo $item->getPrixUnitaire() . "$" ?></td>
                             <td><?php echo $item->getQuantite(); ?></td>
                             <td>
-                                <a class="wrapper" href="?action=modifierProduit&idproduit=<?php echo $item->getId() ?>"><button class="btn-rights" >Modifier</button></a>
+                                <a class="wrapper" href="?action=voirModifierProduit&idproduit=<?php echo $item->getId() ?>"><button class="btn-rights" >Modifier</button></a>
                             </td>
                             <td>
                             <a class="wrapper" href="?action=suprimerProduit&idproduit=<?php echo $item->getId() ?>" >

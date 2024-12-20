@@ -3,36 +3,28 @@
 include_once "models/produit.class.php";
 
 class VoirModifierProduit extends Controleur{
-
+    private ?Produit $unProduit = null;
 	public function __construct()
 	{
 		parent::__construct();
 
 	}
+
+    public function getProduit(): ?Produit {
+        return $this->unProduit;
+    }
+
 	public function executerAction():string
 	{
 	
-		if (isset($_SESSION['code'])) {
-			$unCode = $_SESSION['code'];
-			$unProduit = ProduitDAO::chercher($unCode);
-	
-			if (isset($_REQUEST["description"])) {
-				$description = $_POST["description"];
-				$marque = $_POST["marque"];
-				$prix = $_POST["prix"];
-				$quantite = $_POST["quantite"];
-	
-				$unProduit->setDescription($description);
-				$unProduit->setMarque($marque);
-				$unProduit->setPrix($prix);
-				$unProduit->ajouterAuStock($quantite);
-	
-				// Modifier le produit dans la base de données
-				// ProduitDAO::modifier($unProduit);
+		if (isset($_GET['idproduit'])) { // c'est vraiment con de faire ça comme ça hahah. pas le temps
+			$unCode = $_GET['idproduit'];
+			$unProduit = ProduitDAO::chercherParId( (int) $unCode);
 
-			}
+            $this->unProduit = new Produit( $unProduit['id'],$unProduit['cate'], $unProduit['nom'], $unProduit['prixUnitaire'],$unProduit['quantite'], $unProduit['urlPhoto']);
+            
+		    return "visualiser_produit_admin";
 		}
-		return "listeproduits_admin";
 
 }
 }
