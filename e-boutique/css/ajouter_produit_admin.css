@@ -17,6 +17,7 @@ form{
     max-width: 400px;
     width: 70%;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 form > div {
@@ -87,4 +88,14 @@ form > div:nth-child(7) > button:hover{
 .success{
     list-style-type: none;
     color: var(--vert-clair);
+}
+
+button.error a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.image-visualizer{
+    width: 90%;
+    height: auto;
 }

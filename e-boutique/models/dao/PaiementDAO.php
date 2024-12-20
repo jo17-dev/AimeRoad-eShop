@@ -1,4 +1,5 @@
 <?php
+include_once("connexionBD.class.php");
 class PaiementDAO {
     private $connexion;
 
