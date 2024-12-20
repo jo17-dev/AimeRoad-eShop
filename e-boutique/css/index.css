@@ -2,7 +2,6 @@
 @import url("./init.css");
 @import url('./header.css');
 @import url('./footer.css');
-
 .light-green-text{
     color: var(--vert-clair);
 
@@ -52,10 +51,18 @@ header .left-part .go-to-shop-btn{
     /* height: 60%; */
 }
 .circle{
-    background-color: var(--vert-clair);
     margin-left: auto;
     margin-right: auto;
     border-radius: 48% 48%;
+}
+
+.circle img {
+    border: 1px solid var(--vert-sombre);
+    border-radius: 70px;
+}
+
+.circle-1 img {
+    height: 300px;
 }
 
 .circle-1{
@@ -63,22 +70,25 @@ header .left-part .go-to-shop-btn{
     height: 30%; */
     width: 400px;
     height: 127px;
-    margin-top: 5%;
+    margin-left: 20px;
+    margin-top: 0px;
 }
 .circle-2{
     /* width: 60%;
     height: 25%; */
     width: 341px;
     height: 110px;
-    margin-top: -2%;
+    margin-top: 0px;
+    margin-right: 10px;
     transform: translateX(-5%);
 }
 .circle-3{
     /* width: 30%;
     height: 20%; */
-    width: 170px;
-    height: 82px;
-    margin-top: -2%;
+    width: 140px;
+    height: 52px;
+    margin-top: 0px;
+    margin-left: 20px;
     transform: translateX(-20%);
 }
 
@@ -150,10 +160,11 @@ header .left-part .go-to-shop-btn{
 /* media querries */
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 650px) {
     header{
         width: 100vw;
         min-height: auto;
+        max-height: auto;
         /* padding-top: 50px; */
     }
     header .right-part{
@@ -209,6 +220,59 @@ header .left-part .go-to-shop-btn{
     .categories-container .categories-item:nth-child(odd){
         margin-left: 0;
         margin-right: auto;
+    }
+
+    .section-title{
+        font-size: large;
+        color: var(--vert-clair);
+    }
+
+    .section-title .section-title-line{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 890px) {
+    header{
+        width: 100vw;
+        min-height: auto;
+        
+        /* padding-top: 50px; */
+    }
+    header .right-part{
+        display: none;
+    }
+    header .left-part{
+        width: 100%;
+        /* position: absolute; */
+        margin-inline: auto;
+        /* padding-top: 40px; */
+    }
+
+    header .left-part h1 span{
+        display: inline-block;
+    }
+
+    header .left-part h1{
+        /* background-color: purple; */
+        font-size: 2.4rem;
+        width: 70%;
+        margin: auto;
+    }
+    header .left-part .go-to-shop-btn{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    header .left-part > div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        /* margin-top: auto;
+        margin-bottom: 0; */
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .section-title{
