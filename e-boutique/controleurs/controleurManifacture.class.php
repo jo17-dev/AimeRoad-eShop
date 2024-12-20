@@ -14,6 +14,7 @@ include_once "seInscrire.controleur.php";
 include_once "voirInscription.controleur.php";
 include_once "voirListeClient.controleur.php";
 include_once "ajouterDroitsAdmin.controleur.php";
+include_once "supprimerClient.controleur.php";
 include_once "suprimerDroitsAdmin.controleur.php";
 include_once "suprimerCompte.controleur.php";
 include_once "modifierClient.controleur.php";
@@ -67,6 +68,8 @@ class ControleurManifacture {
             return new VoirInscription();
         }elseif($action == "voirAcceuil") {
             return new VoirAcceuil();
+        }elseif($action == "supprimerClient") {
+            return new SupprimerClient();
         }elseif($action == "modifierClient"){
             return new ModifierClient();
         }elseif($action == "voirListeProduits") {

@@ -37,6 +37,17 @@ class ClientDAO implements DAO {
         ConnexionBD::close();
     }
 
+    public static function supprimer(int $id) {
+        try { 
+        $connexion=ConnexionBD::getInstance();   
+        } catch (Exception $e) { 
+        throw new Exception("Impossible d’obtenir la connexion à la BD.");
+        }
+
+        $connexion->exec("DELETE FROM Client WHERE id=$id");
+        ConnexionBD::close();
+    }
+
     public static function miseAJour(int $id, string $changements): bool{
         $connexion =  ConnexionBD::getInstance();
 
@@ -111,24 +122,6 @@ class ClientDAO implements DAO {
 
         return $rows;
     }
-
-    public static function supprimer(int $id) : bool{
-        try { 
-            $connexion=ConnexionBD::getInstance();   
-        } catch (Exception $e) {
-            return false;
-        }
-        $commande = $connexion->query("SELECT * FROM client WHERE id = $id");
-
-        $rows = $commande->fetchAll();
-        if(count($rows) != 0){ // On ne supprime les droits d'admin que s'il existe déjas
-            $commande = $connexion->exec("DELETE FROM client WHERE id=$id");
-            ConnexionBD::close();
-            return true;
-        }
-        ConnexionBD::close();
-        return false;
-}
 }
 
 ?>

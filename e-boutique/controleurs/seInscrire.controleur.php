@@ -10,7 +10,6 @@
 
         function executerAction(): string
         {
-            
             if (isset($_POST['nom']) and isset($_POST['prenom']) and isset($_POST['adresse']) and isset($_POST['mdp'])) {
                 if(!empty(ClientDAO::chercherParEmail($_POST['adresse'])['email']) or (strlen($_POST['mdp']) < 5)) {
                     return "inscription";
@@ -23,6 +22,9 @@
 
                     $unClient = ClientDAO::chercherParEmail($_POST['adresse']);
                     $unClient['estAdmin']=false;
+
+                    $unClient['estAdmin']=false;
+
                     $_SESSION['utilisateurConnecte'] = $unClient;
 
                     
