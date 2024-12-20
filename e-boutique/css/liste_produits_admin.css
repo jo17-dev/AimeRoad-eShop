@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+
+.content-wrapper{
+    margin: auto;
+}
+
 table{
     width: 95%;
     margin: auto;
@@ -64,4 +69,11 @@ tbody tr:nth-child(odd) {
 .add-btn{
     padding: 10px;
     width: fit-content;
+}
+
+@media screen and (max-width: 425px) {
+    .content-wrapper{
+        width: 96%;
+        overflow-x: scroll;
+    }
 }
