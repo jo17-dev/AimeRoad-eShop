@@ -4,8 +4,7 @@ class PaiementDAO {
 
     public function __construct() {
         try {
-            $this->connexion = new PDO('mysql:host=localhost;dbname=boutique', 'root', ''); //  A Modifier 
-            $this->connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->connexion = ConnexionBD::getInstance();
            
         } catch (PDOException $e) {
             die("Erreur de connexion à la base de données : " . $e->getMessage());
