@@ -2,7 +2,6 @@
 @import url("./init.css");
 @import url('./header.css');
 @import url('./footer.css');
-
 .light-green-text{
     color: var(--vert-clair);
 
@@ -52,10 +51,18 @@ header .left-part .go-to-shop-btn{
     /* height: 60%; */
 }
 .circle{
-    background-color: var(--vert-clair);
     margin-left: auto;
     margin-right: auto;
     border-radius: 48% 48%;
+}
+
+.circle img {
+    border: 1px solid var(--vert-sombre);
+    border-radius: 70px;
+}
+
+.circle-1 img {
+    height: 300px;
 }
 
 .circle-1{
@@ -63,14 +70,16 @@ header .left-part .go-to-shop-btn{
     height: 30%; */
     width: 400px;
     height: 127px;
-    margin-top: 5%;
+    margin-left: 20px;
+    margin-top: 60px;
 }
 .circle-2{
     /* width: 60%;
     height: 25%; */
     width: 341px;
     height: 110px;
-    margin-top: -2%;
+    margin-top: 60px;
+    margin-right: 20px;
     transform: translateX(-5%);
 }
 .circle-3{
@@ -78,7 +87,8 @@ header .left-part .go-to-shop-btn{
     height: 20%; */
     width: 170px;
     height: 82px;
-    margin-top: -2%;
+    margin-top: 60px;
+    margin-left: 20px;
     transform: translateX(-20%);
 }
 
