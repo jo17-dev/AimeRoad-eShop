@@ -47,8 +47,10 @@ class ProduitDAO implements DAO {
  
     public static function chercherParNom(string $chercherParNom): array {
         $connexion =  ConnexionBD::getInstance();
+
+        $sanitizedNom = htmlspecialchars($chercherParNom);
  
-        $statement = $connexion->prepare("SELECT * FROM produit WHERE nom='$chercherParNom'");
+        $statement = $connexion->prepare("SELECT * FROM produit WHERE nom='$sanitizedNom'");
         $statement->execute();
  
         $row = $statement->fetchAll();
@@ -80,10 +82,13 @@ class ProduitDAO implements DAO {
  
     public static function AjouterProduit(String $nom, int $idCategorie, float $prixUnitaire, int $quantite, string $urlPhoto): array {
         $connexion =  ConnexionBD::getInstance();
+
+        $sanitizedNom = htmlspecialchars($nom);
+        $sanitizedUrlPhoto = htmlspecialchars($urlPhoto);
  
         $statement = $connexion->prepare("INSERT INTO produit (idCategorie, nom, prixUnitaire, quantite, urlPhoto)
         VALUES
-            ( $idCategorie, '$nom', $prixUnitaire, $quantite, '$urlPhoto')");
+            ( $idCategorie, '$sanitizedNom', $prixUnitaire, $quantite, '$sanitizedUrlPhoto')");
         $statement->execute();
  
         $row = $statement->fetchAll();
