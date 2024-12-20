@@ -8,11 +8,11 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
  * cette vue n'étant reservée qu'as la "vue", les autres actions sur cette page comme la modification des
  * infos admins, tout autre seras rédirigé vers l'action
  */
-    if(isset($_GET['action'])){
-        if($_GET['action'] != "voirAjouterProduit"){
-            header("Location: ?action=voirAjouterProduit");
-        }
-    }
+    // if(isset($_GET['action'])){
+    //     if($_GET['action'] != "voirAjouterProduit"){
+    //         header("Location: ?action=voirAjouterProduit");
+    //     }
+    // }
 }else{
     header("Location: ?action=''");
 }
@@ -35,7 +35,14 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
         <div class="user-info">
             <div id="container" >
                 <h1>Formulaire de création de produits</h1>
-                <form action="?action=creerProduit" method="post">
+                <ol class="msg-container">
+                    <!-- <li class="msg-item error" >Vous n'avez pas pu remplir</li>
+                    <li class="msg-item success" >La couleur doit être bie choisie hhaha</li> -->
+                    <?php foreach(Controleur::getMessagesErreur() as $item){ ?>
+                        <li class="msg-item error" > <?php echo $item ?> </li>
+                    <?php } ?>
+                </ol>
+                <form action="?action=creerProduit" method="post" enctype="multipart/form-data">
                     <div>
                         <label for="nom">Nom:</label>
                         <input type="text" name="nom" id="nom" required>

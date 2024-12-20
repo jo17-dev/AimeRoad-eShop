@@ -44,6 +44,31 @@
     cursor: pointer;
 }
 
+.aside-nav .toggle-side-bar{
+    border: 1px solid var(--blanc-clair);
+    padding: 4px;
+    margin-left: auto;
+    margin-right: 2px;
+    color: var(--blanc-clair);
+    background-color: var(--vert-sombre);
+    border-radius: 4px 4px;
+    cursor: pointer;
+    display: block;
+}
+
+/* toggle side nav stuffs */
+.non-present{
+    display: none;
+}
+
+.reduced-nav{
+    width: min-content;
+}
+
+.ajusted-main-container{
+    grid-template-columns: 85px auto;
+}
+
 /* user section */
 .user-info{
     margin-top: 10vh;
@@ -82,3 +107,26 @@
     border-top: 1px solid var(--vert-sombre);
     padding: 4px;
 }
+
+
+/* ---- media queries pour le truc les comptes admin et client */
+
+@media screen and (max-width: 425px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .ajusted-main-container{
+        display: flex;
+    }
+
+    .reduced-nav{
+        height: min-content;
+        width: 100%;
+    }
+
+    .user-info-raws{
+        width: 90%;
+    }
+}
+

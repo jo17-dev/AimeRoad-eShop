@@ -6,9 +6,9 @@ include_once "models/administrateur.class.php";
 class VoirAjouterProduit extends Controleur{
     private Administrateur $admin;
     private string $vue; // vas contenir la vue qui seras renvoyer àl'execution de l'ation
+    // private array $messages = [];
     public function __construct(){
         parent::__construct();
-        
         session_status() == PHP_SESSION_ACTIVE ? "" : session_start();
         
         //TODO: enlever ce block
