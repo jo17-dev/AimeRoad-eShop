@@ -13,11 +13,11 @@
     z-index: 2;
     margin-bottom: 0;
 
-    animation: scroll-header-effect 1ms forwards;
-    animation-timeline: scroll();
+    /* animation: scroll-header-effect 1ms forwards;
+    animation-timeline: scroll(); */
 }
 
-@keyframes scroll-header-effect {
+/* @keyframes scroll-header-effect {
     from{
         position: relative;
     }
@@ -25,7 +25,7 @@
     to{
         position: fixed;
     }
-}
+} */
 
 .nav-bar .logo{
     float: left;

@@ -26,3 +26,9 @@ btnToogle.addEventListener('click', ()=>{
         btnToogle.style.marginLeft = "auto";
     }
 });
+
+// étant donnés qu'as la 
+window.onload = ()=>{
+    console.log("page completement loadée");
+    btnToogle.click();
+}

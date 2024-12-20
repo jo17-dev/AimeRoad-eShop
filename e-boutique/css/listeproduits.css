@@ -1,0 +1,151 @@
+@import url("./init.css");
+@import url("./header.css");
+@import url('./footer.css');
+ 
+/* Css utilisés */
+ 
+ 
+/* La barre de navigation */
+.nav-bar{
+    background-color: var(--vert-sombre);
+    height: 40px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--vert-clair);
+    position: fixed;
+}
+body { /* le corps de ma page en gros... */
+    background-color: var(--vert-sombre);
+    text-align:center;
+}
+ 
+h1 { /* Notre Collection ... */
+    padding-top: 70px; /* l'espace entre le titre et le dessus... */
+    color: var(--blanc-clair);
+}
+ 
+/* Section des produits */
+.products-section {
+    padding: 20px; /* l'espacement que prends la section(div) de l'affichage des articles dans la page */
+    margin-top: 20px;
+}
+ 
+/* L'apparence/emplacament des grilles de produits et sur les rangées */
+.products-grid {
+    display:grid; /* addaptation des grilles a la page leur position et ou elles flottent*/
+    grid-template-columns:  auto auto auto; /* je veux 3 produits par rangés automatiquement bien adapté */
+    gap: 2vw; /*espace entre le articles sur les rangées et les colonnes a partir du grid */
+    margin-bottom: 30px;
+}
+ 
+/* boite du produit */
+.boite_produit {
+    background-color: var(--blanc-clair);
+    padding: 20px; /* l'espace que les boites prennent dans page */
+    box-shadow: 0 4px 8px var(--noir);
+    border-radius: 8px;
+    text-align: center;
+}
+ 
+/* Titre du produit */
+.titre_du_produit {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px; /* l'espace entre le titre du produit et le dessous... */
+    color: var(--noir);
+}
+ 
+/* Description du produit */
+.description-du-produit {
+    font-size: 14px;
+    color: var(--gris);
+    margin-bottom: 15px;
+}
+ 
+/* Prix*/
+.prix-produit {
+    font-size: 18px;
+    color:var(--noir);
+    font-weight: bold;
+    margin-bottom: 15px; /* l'espace entre le prix et le dessous */
+}
+ 
+/* le bouton add au panier */
+.boutton-add-panier {
+    display: inline-block;
+    background-color:var(--vert-sombre);
+    color:var(--blanc-clair);
+    padding: 10px 15px;  /* la hauteur du bouton x la largeur  */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; /* Comme ca quand le user emmene la souris dessus il sait que cest cliquable... */
+    text-decoration: none;
+}
+ 
+/* effet du bouton quand touché hover */
+.boutton-add-panier:hover {
+    background-color:var(--vert-clair); /* Comme ca quand le user emmene la souris dessus la couleur change ca creer un jolie effet dynamique... */
+}
+ 
+/* Image du produit */
+.img-produits{
+    max-height: 200px;
+    width: 100%;
+    max-width: 200px;
+}
+ 
+.debut_espace_recherche{
+    color: var(--blanc-clair);
+}
+ 
+.espace_recherche{
+    padding-top: 40px;
+    color: var(--blanc-clair);
+}
+ 
+.filtre{
+    margin-top: 10px;
+    height: 24px;
+}
+ 
+ 
+/* section cathegories */
+.section-title{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.footer{
+    text-align: left;
+}
+ 
+.btn-content{
+    text-decoration: none;
+    color: inherit;
+}
+
+ 
+ 
+/* version mobile*/
+ 
+  @media (max-width: 600px) /*ecran de 600px et moins*/
+ 
+  {
+    .products-grid {
+        grid-template-columns: auto; /*une colonne automatique*/
+    }
+ 
+    .boite_produit {
+        padding: 10px;  /*Espace que prend la boite du produit dans l'ecran mobile*/
+    }
+ 
+    .img-produits {
+        height: 150px; /*Nouvelle taille d'image du produit par rapport aux appareils mobiles*/
+    }
+}

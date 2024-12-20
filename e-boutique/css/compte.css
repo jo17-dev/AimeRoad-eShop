@@ -115,6 +115,7 @@
     .main-container{
         display: flex;
         flex-direction: column;
+        font-size: smaller;
     }
     .ajusted-main-container{
         display: flex;
@@ -125,8 +126,12 @@
         width: 100%;
     }
 
+    .user-info{
+        width: 100%;
+    }
+
     .user-info-raws{
-        width: 90%;
+        width: 85%;
     }
 }
 

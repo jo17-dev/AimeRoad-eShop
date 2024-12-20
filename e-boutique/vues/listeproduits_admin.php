@@ -40,43 +40,45 @@ if(!is_null($controleur) && isset($_SESSION['utilisateurConnecte']['estAdmin']))
             <section class="controls-container">
                 <a class="wrapper" href="?action=voirAjouterProduit"><button class="btn-rights add-btn" >Ajouter un produit</button></a>
             </section>
-            <table>
-                <thead>
-                    <td>code</td>
-                    <td>Nom</td>
-                    <td>categorie</td>
-                    <td>prix unitaire </td>
-                    <td>Quantitée disponible</td>
-                    <td colspan="2" >Actions</td>
-                </thead>
-                <tbody>
-                    <?php
-                        if(count($controleur->getTabProduits()) == 0){
-                            echo "<tr><td colspan='5' class='no-datas-warning'>Aucune donnée disponible pour cet affichage</td></tr>";
-                        }else{
-                            foreach($controleur->getTabProduits() as $item){
-                    ?>
-                    <tr>
-                        <td> <?php echo $item->getId(); ?> </td>
-                        <td><?php echo $item->getNom(); ?></td>
-                        <td><?php echo $item->getCategorie(); ?></td>
-                        <td><?php echo $item->getPrixUnitaire() . "$" ?></td>
-                        <td><?php echo $item->getQuantite(); ?></td>
-                        <td>
-                            <a class="wrapper" href="?action=modifierProduit&idproduit=<?php echo $item->getId() ?>"><button class="btn-rights" >Modifier</button></a>
-                        </td>
-                        <td>
-                        <a class="wrapper" href="?action=suprimerProduit&idproduit=<?php echo $item->getId() ?>" >
-                            <button class="btn-rights btn-delete-account" >Supprimer</button>
-                        </a>
-                        </td>
-                    </tr>
-                    <?php
+            <div class="content-wrapper">
+                <table>
+                    <thead>
+                        <td>code</td>
+                        <td>Nom</td>
+                        <td>categorie</td>
+                        <td>prix unitaire </td>
+                        <td>Quantitée disponible</td>
+                        <td colspan="2" >Actions</td>
+                    </thead>
+                    <tbody>
+                        <?php
+                            if(count($controleur->getTabProduits()) == 0){
+                                echo "<tr><td colspan='5' class='no-datas-warning'>Aucune donnée disponible pour cet affichage</td></tr>";
+                            }else{
+                                foreach($controleur->getTabProduits() as $item){
+                        ?>
+                        <tr>
+                            <td> <?php echo $item->getId(); ?> </td>
+                            <td><?php echo $item->getNom(); ?></td>
+                            <td><?php echo $item->getCategorie(); ?></td>
+                            <td><?php echo $item->getPrixUnitaire() . "$" ?></td>
+                            <td><?php echo $item->getQuantite(); ?></td>
+                            <td>
+                                <a class="wrapper" href="?action=modifierProduit&idproduit=<?php echo $item->getId() ?>"><button class="btn-rights" >Modifier</button></a>
+                            </td>
+                            <td>
+                            <a class="wrapper" href="?action=suprimerProduit&idproduit=<?php echo $item->getId() ?>" >
+                                <button class="btn-rights btn-delete-account" >Supprimer</button>
+                            </a>
+                            </td>
+                        </tr>
+                        <?php
+                                }
                             }
-                        }
-                    ?>
-                </tbody>
-            </table>
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
     <script src="js/popup.module.js"></script>
