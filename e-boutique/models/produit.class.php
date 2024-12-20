@@ -53,8 +53,8 @@
     }
 
 
-    public function setIdCategorie(string $idCategorie): void {
-        $this->idCategorie = $idCategorie;
+    public function setIdCategorie(string $categorie): void {
+        $this->categorie = $categorie;
     }
 
     public function setNom(string $nom): void {

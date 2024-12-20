@@ -50,8 +50,6 @@ class ControleurManifacture {
             return new SupprimerDroitsAdmin();
         }elseif($action == "suprimerCompte"){
             return new SuprimerCompte();
-        }elseif($action == ""){
-                
         }
         elseif($action == ""){
             return new VoirAcceuil();
