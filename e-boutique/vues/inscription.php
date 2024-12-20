@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="css/inscription.css">
 </head>
 <body>
-<div class="logo">
-    <a href="?action=voirAcceuil"><img src="img/logo-320x60.png" alt=""></a>
-    </div>
+    <?php
+    if ($_SESSION['signupFailure']) {
+        echo "<script>alert('Les informations inscrites sont invalides, veuillez réessayer')</script>";
+        session_destroy();
+    }
+    ?>
+
+    <?php include_once("vues/includes/header.php")?>
 
     <div class="texte">
     <h1>Inscription</h1>
@@ -45,12 +50,14 @@
 
         <div class="info">
         Vous possédez un compte?<br>
-        <a href="?action=voirConnexion" title="">Se connecter</a><br>
+        <a href="?action=voirConnexion" title="" id="LienConnexion">Se connecter</a><br>
         </div>
         
     </form>
     <div></div>
     </div>
+
+    <?php include_once("vues/includes/footer.php")?>
 
 </body>
 </html>

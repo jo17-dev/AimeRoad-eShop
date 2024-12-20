@@ -1,4 +1,5 @@
 <!--Barre de navigation sur toutes les pages-->
+<link rel="stylesheet" href="css/header.css">
 <nav class="nav-bar">
     <img src="img/logo-320x60.png" class="logo" alt="Aimeroad">
     <ul class="links">
@@ -15,3 +16,4 @@
         </li>
     </ul>
 </nav>
+<script src="js/scroll_nav_bar.js"></script>

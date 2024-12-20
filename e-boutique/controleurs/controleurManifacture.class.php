@@ -14,6 +14,7 @@ include_once "seInscrire.controleur.php";
 include_once "voirInscription.controleur.php";
 include_once "voirListeClient.controleur.php";
 include_once "ajouterDroitsAdmin.controleur.php";
+include_once "supprimerClient.controleur.php";
 include_once "suprimerDroitsAdmin.controleur.php";
 include_once "suprimerCompte.controleur.php";
 include_once "modifierClient.controleur.php";
@@ -23,6 +24,7 @@ include_once "creerProduit.controleur.php";
 include_once "supprimerProduit.controleur.php";
 include_once "PanierControleur.php";
 include_once "PaiementControleur.php";
+include_once "voirModifierProduit.controleur.php";
 
 include_once "voirListeProduits.controleur.php";
 
@@ -65,6 +67,8 @@ class ControleurManifacture {
             return new VoirInscription();
         }elseif($action == "voirAcceuil") {
             return new VoirAcceuil();
+        }elseif($action == "supprimerClient") {
+            return new SupprimerClient();
         }elseif($action == "modifierClient"){
             return new ModifierClient();
         }elseif($action == "voirListeProduits") {
@@ -79,6 +83,8 @@ class ControleurManifacture {
             return new PanierControleur();
         }else if($action == "pagePaiement"){
             return new PaiementControleur();
+        }elseif($action == "voirModifierProduit"){
+            return new VoirModifierProduit();
         }
         else{
             return new VoirAcceuil();

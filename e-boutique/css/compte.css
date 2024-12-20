@@ -14,7 +14,15 @@
     background-color: var(--vert-sombre);
     padding-top: 20px;
     float: left;
-    height: calc(100vh - 40px);
+    /* height: calc(100vh - 40px); */
+    height: 94vh;
+    position: fixed;
+    /* top: 40px; */
+}
+
+.aside-nav-fixed{
+    /* position: fixed; */
+    top: 40px;
 }
 .aside-nav .section-title{
     margin-top: 5vh;
@@ -73,6 +81,7 @@
 .user-info{
     margin-top: 10vh;
     width: 100%;
+    grid-column: 2; /* On le garde sur la 2e ligne car lorsque la side-bar devient fixed au scroll, la grid se tasse haha */
 }
 
 .user-info h1{
@@ -132,6 +141,10 @@
 
     .user-info-raws{
         width: 85%;
+    }
+
+    .aside-nav{
+        position: relative;
     }
 }
 

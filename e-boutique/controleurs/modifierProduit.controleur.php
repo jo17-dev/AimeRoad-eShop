@@ -30,10 +30,9 @@ class ModifierProduit extends Controleur{
 				// Modifier le produit dans la base de données
 				// ProduitDAO::modifier($unProduit);
 
-
 			}
 		}
-		return "index";
+		return "listeproduits_admin";
 
 }
 }
