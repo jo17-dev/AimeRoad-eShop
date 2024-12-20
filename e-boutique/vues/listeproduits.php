@@ -18,8 +18,8 @@
             <label class="debut_espace_recherche" for="produit-cherché">Recherche:</label>
             <input type="chercher" id="produit-cherché" name="q" />
    
-            <button>Chercher</button>
-            <img src="img/icone-filtre.png" title="filtrer la recherche" alt="filtrer" class="filtre">
+            <button onclick="alert('cette fonctionnalité est pour le moment indisponible')">Chercher</button>
+            <!-- <img src="img/icone-filtre.png" title="filtrer la recherche" alt="filtrer" class="filtre"> -->
         </form>
     </div>
  
