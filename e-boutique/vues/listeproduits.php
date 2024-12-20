@@ -51,12 +51,11 @@ appliquée aux éléments de classe rouge :
     <h1>Notre Collection d'articles Emeraudes</h1>
  
     <div class="espace_recherche">
-        <form action="listeproduits.html">
+        <form action="?action=voirListeProduits" method="post">
             <label class="debut_espace_recherche" for="produit-cherché">Recherche:</label>
             <input type="chercher" id="produit-cherché" name="q" />
    
-            <button>Chercher</button>
-           <!-- <img src="img/icone-filtre.png" title="filtrer la recherche" alt="filtrer" class="filtre"> -->
+            <button type="submit" >Chercher </button>
 
         </form>
     </div>

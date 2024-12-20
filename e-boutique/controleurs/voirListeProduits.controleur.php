@@ -11,6 +11,10 @@ class VoirProduit extends Controleur{
 			parent::__construct();
 			$this->tabProduits=ProduitDAO::chercherTous();
 		}
+
+		public function rechercher(){
+
+		}
 		
 	
 		public function getTabProduits():array{
@@ -20,6 +24,11 @@ class VoirProduit extends Controleur{
 
 		public function executerAction():string {
 			if(parent::getUtilisateur() != "admin"){
+
+				if(isset($_POST["q"])){
+					$this->tabProduits=ProduitDAO::chercherParNom($_POST["q"]);
+				}
+				
 				return "listeproduits";
 			}elseif(parent::getUtilisateur()=="admin"){
 				return "listeproduits_admin";
