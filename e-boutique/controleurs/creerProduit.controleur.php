@@ -29,7 +29,7 @@ class CreerProduit extends Controleur{
 				Controleur::ajouterMessageErreur("La photo n'as pas pu etre bien telechargée");
 			}
 
-			if(count(ProduitDAO::chercherParNom($nom)) > 0){
+			if(count(ProduitDAO::rechercheExacte($nom)) > 0){
 				Controleur::ajouterMessageErreur("Le produit exsiste déjas !");
 			}
 

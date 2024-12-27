@@ -72,6 +72,33 @@ class ProduitDAO implements DAO {
  
         return $result;
     }
+
+    public static function rechercheExacte(string $chercherParNom): array {
+        $connexion =  ConnexionBD::getInstance();
+
+        $sanitizedNom = htmlspecialchars($chercherParNom);
+ 
+        $statement = $connexion->prepare("SELECT produit.*, categorie.nom 'cate' FROM produit INNER JOIN categorie ON produit.idCategorie = categorie.id WHERE produit.nom='$sanitizedNom'", );
+        $statement->execute();
+ 
+        $row = $statement->fetchAll();
+ 
+        $result = [];
+        if($row == false){
+            return $result;
+        }
+
+
+        foreach($row as $valeur){
+            array_push($result, new Produit($valeur['id'], $valeur['cate'], $valeur['nom'], $valeur['prixUnitaire'], $valeur['quantite'], $valeur['urlPhoto']));
+        }
+
+
+       
+        ConnexionBD::close();
+ 
+        return $result;
+    }
  
  
  
