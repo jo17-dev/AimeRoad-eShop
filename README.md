@@ -1,7 +1,7 @@
 
 <img src="./e-boutique/img/logo-320x60.png">
 
-<video src="./autres/demo/demov1.mp4"></video>
+https://github.com/user-attachments/assets/23fd67ae-762a-4172-8133-5d3cacc03d39
 
 ## Description
 Aimeroad est une applicaton web orientée vers la marque de produit, qui ne vends que des produits à la couleure emeraude.
